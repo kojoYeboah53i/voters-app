@@ -14,9 +14,9 @@ $('#president').click(function (e) {
  /*********************/
 
  $('#login').click(function (e) { 
-     e.preventDefault();
+     e.preventDefault(); 
      let phone = $('#phone').val();
-     console.log(phone);
+     console.log(phone); 
  
  $.ajax({
     type: "POST",
