@@ -1,0 +1,16 @@
+{
+    "name": "hubtel/hubtel-sms",
+    "description": "A PHP open source library for integrating with the Hubtel SMS API",
+    "keywords": ["sms", "hubtel", "api"],
+    "homepage": "https://github.com/hubtel/hubtel-sms-php",
+    "type": "library",
+    "require": {
+        "php": "^5.3"
+    },
+    "autoload": {
+        "classmap": [
+            "Hubtel"
+        ]
+
+   }
+}
