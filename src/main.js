@@ -5,7 +5,7 @@ $(function () {
 
 $('#president').click(function (e) { 
     e.preventDefault();
-    alert('eat ma ass')
+    alert('president')
 });
 
 
@@ -20,8 +20,8 @@ $('#president').click(function (e) {
  
  $.ajax({
     type: "POST",
-    url: "./src/route?func=login_user",
-
+    url: "src/route?func=login_user",
+    dataType: "jsonp",
   data: {phone : phone},
   
   beforeSend: function(){
