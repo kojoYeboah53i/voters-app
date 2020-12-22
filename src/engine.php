@@ -1,10 +1,35 @@
 <?php
 session_start();
 
-function login(){
+
+/*********************
+ * login function
+/*********************/
+function login_user(){
+
+
     include 'db.php';
+
     extract($_POST);
-    if($phone)
+    if(!empty($phone)){
+        echo "is ok";
+
+        $this_phone = mysqli_real_escape_string($con, $phone);
+            try {
+                $result = mysqli_query($con, "SELECT * from  user where phone = '$phone");
+                if(!$result){
+                    throw new Exception("not found, user is not registered..!");
+                } else{
+                    echo "login successful...!";
+                }
+        
+
+            } catch (Exception $th) {
+                //throw $th;
+            }
+     
+
+    }
     
 
 
