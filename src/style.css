@@ -1,0 +1,93 @@
+.banner{
+    height: 270px;
+    width: 100%;
+    background-color: #23c79e;
+}
+.inner-banner{
+    width: 100%;
+    color: white;
+}
+.result-buttons{
+    margin-top: 100px;
+}
+.election-result{
+  
+    border-radius: 7px;
+
+}
+.my-search{
+    font-size: 1.2rem; margin-right: 14px;
+}
+.this-login{
+    border-radius: 12px;
+    font-size: 1.2rem;
+}
+.container-bkg{
+    border: 1px solid black;
+    width: 50%;
+    background-color: #fff;
+}
+.center {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    i
+}
+.center th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(14, 70, 70);
+    color: white;
+}
+
+.center tr:nth-child(even){background-color: #f2f2f2;}
+
+.center tr:hover {background-color: #ddd;}
+
+.center th, .center td{
+     /*border: 1px solid #ddd;*/
+     padding: 8px;
+     
+}
+
+.center tbody tr{
+    border-bottom: 1px solid #9e9e9e50;
+}
+.btn-position{
+    text-align: center;
+}
+.button-1 {
+    background-color: #23c79e;
+    border: none; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 7px;
+    
+}
+.button-2 {
+    background-color: green;
+    border: none; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 7px;
+}
+.csv-border{
+    border-bottom:  1px solid black;
+    
+}
+
+
+    
+
