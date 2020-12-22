@@ -16,7 +16,7 @@ function login_user(){
 
         $this_phone = mysqli_real_escape_string($con, $phone);
             try {
-                $result = mysqli_query($con, "SELECT * from  user where phone = '$phone");
+                $result = mysqli_query($con, "SELECT * from  user where phone = '$this_phone");
                 if(!$result){
                     throw new Exception("not found, user is not registered..!");
                 } else{
@@ -26,6 +26,7 @@ function login_user(){
 
             } catch (Exception $th) {
                 //throw $th;
+                echo $th->getMessage();
             }
      
 

@@ -24,7 +24,7 @@
                 <i class="fa fa-search my-search" ></i>
               </form>
                 
-                <button type="submit" class="this-login btn btn-info"><i class="fa fa-user"  style="margin-right: 6px;"></i>Login</button>
+                <button type="submit" class="this-login btn btn-info"  data-toggle="modal" data-target="#login_"><i class="fa fa-user"  style="margin-right: 6px;"></i>Login</button>
             </div>
           </nav>
         <div class="container banner">
@@ -103,7 +103,53 @@
                     </div>
                         
 
-
+                    <div class="modal fade" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header" style=" color: white; background: #fc5000;">
+                              <h4 class="modal-title" id="myModalLabel"></h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" style="background-color:   #0d0e0f;">
+                              <h3>Give us a few details</h3>
+                              <form id="upload_product_1" method="post" enctype="multipart/form-data">
+                      
+              
+                      
+                      <div class="box-body-edit" >
+                      
+                          <label>Do you have a domain for your website</label>
+                   
+                      <!-- </div> -->
+                      <div class="form-group">
+                          <label for="quantity">Enter your phone number</label>
+                          <input type="text" class="form-control input-field" id="phone" name="phone"
+                              placeholder="" >
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <label for="quantity">Enter your email address</label>
+                          <input type="text" class="form-control input-field" id="parent" name="parent"
+                              placeholder="parent">
+                      </div>
+                      
+                      
+                      
+                      
+                      </div>
+                      
+                      <div class="success"></div>
+                      </form>
+                      
+                            </div>
+                            <div class="modal-footer" style=" color: white; background: #fc5000;">
+                              <button type="button" id="login" class="btn btn-primary " style=" color: white; background: black">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
 
