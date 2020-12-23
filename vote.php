@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['user_id'])){
+
+    
+    header('location: index.html');
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
