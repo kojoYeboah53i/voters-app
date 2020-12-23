@@ -36,8 +36,9 @@ beforeSend: function(){
 
 success: function(response, textStatus, jqXHR) {
    console.log(response);
-  $('result-data"').html(data);
-  if(data == 'successful'){
+   
+  $('result-data').html(response);
+  if(response == 'successful'){
     alert("user can vote")
   }
 
