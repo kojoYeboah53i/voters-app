@@ -41,7 +41,7 @@ success: function(response, textStatus, jqXHR) {
    
    $('p.login-box-msg').html(response);
   if(response == 'successful'){
-    alert("user can vote")
+  window.location = "./vote.php";
   }
 
 }
