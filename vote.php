@@ -6,8 +6,11 @@ if(!isset($_SESSION['user_id'])){
 
     
     header('location: index.html');
-}
+} else {
+    
+    $user_id  = $_SESSION['user_id'];
 
+}
 
 
 ?>
@@ -38,8 +41,8 @@ if(!isset($_SESSION['user_id'])){
                 <i class="fa fa-search my-search" ></i>
               </form>
                 
-                <button type="submit" class="this-login btn btn-info"  data-toggle="modal" data-target="#login_"><i class="fa fa-user"  style="margin-right: 6px;"></i>Login</button>
-            </div>
+              <a href="logout.php">    <button type="submit" class="this-login btn btn-info" ></button><i class="fa fa-user"  style="margin-right: 6px;"></i>Logot</button>
+            </div>  </a>
           </nav>
         <div class="container banner">
             <div class="row">
