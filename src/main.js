@@ -20,8 +20,7 @@ $('#president').click(function (e) {
  
  $.ajax({
     type: "POST",
-    url: "src/route?func=login_user",
-    dataType: "jsonp",
+    url: "route?func=login_user",
   data: {phone : phone},
   
   beforeSend: function(){

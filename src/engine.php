@@ -1,5 +1,4 @@
 <?php
-header ("Access-Control-Allow-Origin: *"); 
 session_start();
 
 
@@ -7,7 +6,7 @@ session_start();
  * login function
 /*********************/
 function login_user(){
-
+        echo "file found";
 
     include 'db.php';
 
@@ -31,6 +30,8 @@ function login_user(){
             }
      
 
+    } else {
+        echo "no phone number sent";
     }
     
 
