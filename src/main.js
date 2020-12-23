@@ -20,7 +20,7 @@ $('#president').click(function (e) {
  
  $.ajax({
     type: "POST",
-    url: "route?func=login_user",
+    url: "http://codjosoft.tech/voters-app/route?func=login_user",
   data: {phone : phone},
   
   beforeSend: function(){
@@ -28,7 +28,7 @@ $('#president').click(function (e) {
 
   },
   success: function(response) {
-    // console.log(response);
+     console.log(response);
 }
 });
 });
