@@ -1,34 +1,52 @@
 $(function () {
-    // alert('hello world')
+  // alert('hello world')
 });
 
 
 $('#president').click(function (e) { 
-    e.preventDefault();
-    alert('president')
+  e.preventDefault();
+  alert('president')
 });
 
 
- /*********************
-  * user login
- /*********************/
+/*********************
+* user login
+/*********************/
 
- $('#login').click(function (e) { 
-     e.preventDefault(); 
-     let phone = $('#phone').val();
-     console.log(phone); 
- 
- $.ajax({
-    type: "POST",
-    url: "http://codjosoft.tech/voters-app/route?func=login_user",
-  data: {phone : phone},
-  
-  beforeSend: function(){
-    console.log("user is loggin ");
+$('#login').click(function (e) { 
+   e.preventDefault(); 
 
-  },
-  success: function(response) {
-     console.log(response);
+   var formdata = {
+     name : $('#user').val(),
+     phone : $('#phone').val()
+
+   }
+
+   console.log(formdata); 
+
+$.ajax({
+  type: "POST",
+   url: "./route.php?func=login_user",
+data: formdata,
+
+beforeSend: function(){
+  console.log("user is loggin ");
+
+},
+
+success: function(response, textStatus, jqXHR) {
+   console.log(response);
+  $('result-data"').html(data);
+  if(data == 'successful'){
+    alert("user can vote")
+  }
+
 }
+
+
+
 });
+
+
+
 });
