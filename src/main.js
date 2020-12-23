@@ -9,6 +9,8 @@ $('#president').click(function (e) {
 });
 
 
+;
+
 /*********************
 * user login
 /*********************/
@@ -37,7 +39,7 @@ beforeSend: function(){
 success: function(response, textStatus, jqXHR) {
    console.log(response);
    
-  $('result-data').html(response);
+   $('p.login-box-msg').html(response);
   if(response == 'successful'){
     alert("user can vote")
   }

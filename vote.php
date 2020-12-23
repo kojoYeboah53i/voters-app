@@ -44,16 +44,62 @@
         </div>
         <div class="container app-engine">
                 <div class="row">
-                  <div class="col-md-4" style="margin-top:20px; height: 300px;">
-                      </div>
-                  <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 100px;">
-                    <div class="container">
-                      <h1 style="color: #23c79e;">
-                        Login to vote for your candidate
-                      </h1>
-                    </div>
-                   
 
+                    <div class="col-md-4" style="margin-top:20px;">
+                        <div class="col-sm"> <div class="btn btn-block status" id="president"><h3>President</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h3>Vice President</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h3>General Secretary</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h3>Financial Secretary</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="por"><h3>Public Relations</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h3>General Organizer</h3></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="cor-sec"><h3>Cordinating Secretary</h3></div></div>
+                    </div>
+                    <br>
+                    <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px; ">
+                        <div class="card-body">
+                 <img src="./image/candidate-1.png" width="305" height="245" alt="" srcset="" >
+                   
+                 <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                    <small class="text-muted">Adjoa the leader</small></h4>
+            
+                        <button type="button"  class="btn cta  btn-lg btn-block   " id="Adjoa"style="background: blue; color: white">Blue team</button>
+                      </div>
+                        </div>
+                        <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px; ">
+                            <div class="card-body">
+                                <img src="./image/candidate-2.png" width="305" height="245" alt="" srcset="">
+                       
+                     <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
+                        <small class="text-muted">Kofi the Warrior</small></h4>
+                
+                            <button type="button"  class="btn cta  btn-lg btn-block"  id="kofi-b"style="background:#00ffff; color: white">Royal team</button>
+                          </div>
+                            </div>
+              
+                    
+                    <div class="col-6 col-sm-3 col-md-4  " style="margin-left: 360px; margin-top: -134px;">
+                         <div class="card-body">
+                                    <img src="./image/candidate-3.png" width="305" height="245" alt="" srcset="">
+                           
+                         <h4 class="card-title pricing-card-title"> Yaw Manu <br>
+                            <small class="text-muted">Yaw the leader</small></h4>
+                    
+                                <button type="button"  class="btn cta  btn-lg btn-block   "  id="shop-now"style="background:  #FF00FF; color: white">Magenta Team</button>
+                              </div>
+                                </div>
+                       
+                                <div class="col-6 col-sm-3 col-md-4  " style="margin-left: 1px; margin-top: -134px;">
+                                    <div class="card-body">
+                                               <img src="./image/candidate-4.png" width="305" height="245" alt="" srcset="">
+                                      
+                                    <h4 class="card-title pricing-card-title"> Efia Mensah <br>
+                                       <small class="text-muted">Efia the leader</small></h4>
+                               
+                                           <button type="button"  class="btn cta  btn-lg btn-block   " id="shop-now"style="background: #FFD700; color: white">Gold Team</button>
+                                         </div>
+                                           </div>
+                   
+                        </div>
                     </div>
                         
 
@@ -101,15 +147,11 @@
 
 
 
-
+ 
 
     </div>
 
-    <footer class="footer" style="visibility: hidden;">
-        <div class="container">
-          <span class="text-muted"> created by yours truly, Isaac Yeboah</span>
-        </div>
-      </footer> 
+ 
 
       <script src="./src/jquery.js"></script>
       <script src="./src/bootstrap.js"></script>
