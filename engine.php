@@ -19,7 +19,7 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                     $this_phone = mysqli_real_escape_string($con, $phone);
                     try {
               
-                $result = mysqli_query($con, "SELECT * FROM  voters  ");
+                $result = mysqli_query($con, "SELECT * FROM  voters  WHERE phone = $this_phone");
                 if(!$result){
                  throw new Exception( " query wrong check syntax". mysqli_error($con));
                 } else{
@@ -57,12 +57,12 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                             $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                                         
                                             if ($messageResponse instanceof MessageResponse) {
-                                                echo $messageResponse->getStatus();
+                                               // echo $messageResponse->getStatus();
                                             } elseif ($messageResponse instanceof HttpResponse) {
-                                                echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
                                             }
                                         } catch (Exception $ex) {
-                                            echo  $ex->getTraceAsString();
+                                           // echo  $ex->getTraceAsString();
                                         }
 
                         } else echo "phone not found";
@@ -151,12 +151,12 @@ function register(){
                     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                 
                     if ($messageResponse instanceof MessageResponse) {
-                        echo $messageResponse->getStatus();
+                      //  echo $messageResponse->getStatus();
                     } elseif ($messageResponse instanceof HttpResponse) {
-                        echo "\nServer Response Status : " . $messageResponse->getStatus();
+                      //  echo "\nServer Response Status : " . $messageResponse->getStatus();
                     }
                 } catch (Exception $ex) {
-                    echo  $ex->getTraceAsString();
+                  //  echo  $ex->getTraceAsString();
                 }
                 
             }

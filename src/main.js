@@ -38,12 +38,10 @@ beforeSend: function(){
 
 success: function(response, textStatus, jqXHR) {
    console.log(response);
-   if (response.indexOf("Warning")){
-     console.log(response)
-   }else {
+ 
     $('p.login-box-msg').html(response);
 
-   }
+   
     if (response.indexOf("success")){
   window.location = "./verify.php";
   }
@@ -60,11 +58,11 @@ success: function(response, textStatus, jqXHR) {
 
 
 
-$('register').click(function (e) { 
-  e.preventDefault();
+$('#register-user').click(function (e) { 
+  e.preventDefault(); 
    var formData = {
-     phone : $('#phone').val(),
-     name  : $('#name').val()
+     phone : $('#phone1').val(),
+     name  : $('#name1').val()
    }
 
    $.ajax({
