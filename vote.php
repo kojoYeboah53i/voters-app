@@ -8,7 +8,7 @@ if(!isset($_SESSION['user_in'])){
     header('location: index.html');
 } 
 if($_SESSION['verify'] == false){
-  
+
   header('location: verify.php');
 
 }
@@ -40,9 +40,8 @@ if($_SESSION['verify'] == false){
               <form class="form-inline my-2 my-md-0">
                 <i class="fa fa-search my-search" ></i>
               </form>
-                
-              <a href="logout.php">    <button type="submit" class="this-login btn btn-info" ></button><i class="fa fa-user"  style="margin-right: 6px;"></i>Logot</button>
-            </div>  </a>
+              <a href="logout.php" type="button" class="this-login  btn btn-info" ><i class="fa fa-user" style="margin-right: 6px;"></i>Logout</a>
+            </div>  
           </nav>
         <div class="container banner">
             <div class="row">

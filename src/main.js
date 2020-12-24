@@ -150,3 +150,8 @@ $('.vote').click(function (e) {
     }
   });
 });
+
+$('#logout').click(function (e) { 
+  e.preventDefault();
+  alert(logout);
+});

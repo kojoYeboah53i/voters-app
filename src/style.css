@@ -16,6 +16,23 @@
     border-radius: 7px;
 
 }
+
+.left-column{
+
+margin-top:20px; height: 300px;
+
+}
+.display-result{
+  background: #ffff;
+  height: 500px;
+  width: 100%;
+}
+.candidate-container{
+ margin-top: 10px; background: white; height: 250px;    box-shadow: 0 2px 10px 1px rgba(0,0,0,.3);
+}
+.poll-data{
+width: 300px;  position: relative; top: -200px; right: -245px;
+}
 .my-search{
     font-size: 1.2rem; margin-right: 14px;
 }
