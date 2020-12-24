@@ -53,17 +53,18 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                         $disableConsoleLogging = false;
                                         
                                         $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        try {
-                                            $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
+                                        echo "sending airtime now";
+                                        // try {
+                                        //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                                         
-                                            if ($messageResponse instanceof MessageResponse) {
-                                               // echo $messageResponse->getStatus();
-                                            } elseif ($messageResponse instanceof HttpResponse) {
-                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
-                                            }
-                                        } catch (Exception $ex) {
-                                           // echo  $ex->getTraceAsString();
-                                        }
+                                        //     if ($messageResponse instanceof MessageResponse) {
+                                        //        // echo $messageResponse->getStatus();
+                                        //     } elseif ($messageResponse instanceof HttpResponse) {
+                                        //        // echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                        //     }
+                                        // } catch (Exception $ex) {
+                                        //    // echo  $ex->getTraceAsString();
+                                        // }
 
                         } else echo "phone not found";
                     }

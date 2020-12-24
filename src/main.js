@@ -39,11 +39,18 @@ beforeSend: function(){
 success: function(response, textStatus, jqXHR) {
    console.log(response);
  
-    $('p.login-box-msg').html(response);
-
    
     if (response.indexOf("success")){
-  window.location = "./verify.php";
+    $('p.login-box-msg').css('color', 'green');
+    $('p.login-box-msg').html(" login successful..!");
+      setTimeout(() => {
+        $('p.login-box-msg').fadeOut('slow');
+        // window.location = "./verify.php";
+        
+      }, 3000);
+  } else{
+    $('p.login-box-msg').css('color', 'red');
+    $('p.login-box-msg').html(" phone not found");
   }
 
 }
