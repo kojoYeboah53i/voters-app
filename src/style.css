@@ -43,6 +43,20 @@
  border-radius: 50px 50px 50px 0;
   }
 
+  .card-body{
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  }
+
+  .card-body :hover  {
+    background: #23c79e;
+
+    opacity: .5;
+  }
+/* .cta {
+    display : none;
+} */
 
   .footer {
     position: absolute;
