@@ -7,10 +7,8 @@
 /*********************/
 function login_user(){
 include 'db.php';
-include './hubtelsms/Hubtel/Api.php'; 
-include './hubtelsms/vendor/autoload.php';
-require './vendor/autoload.php';
-require 'db.php';
+include 'hubtelsms/Hubtel/Api.php'; 
+include 'hubtelsms/vendor/autoload.php';
 
 
 $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
@@ -94,11 +92,9 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 /******************** */
 
 function register(){
-    include 'db.php';
 
     include './hubtelsms/Hubtel/Api.php'; 
     include './hubtelsms/vendor/autoload.php';
-    require './vendor/autoload.php';
     require 'db.php';
     
   
