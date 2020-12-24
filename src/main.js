@@ -75,9 +75,11 @@ $('register').click(function (e) {
       success: function (response) {
         console.log(response);
         $('p.box-msg-r').html(response);
-        if(response == 'successful'){
-        window.location = "./verify.php";
-        }
+       setTimeout(() => {
+      window.location = "./verify.php";
+       
+     }, 3000);
+        
        
      }
    });
@@ -100,7 +102,7 @@ $('.verify').click(function (e) {
     success: function (response) {
       console.log(response)
       $('p.box-msg-v').html(response);
-      if(response == 'successful'){
+      if(response >= 20){
         window.location = "./vote.php";
 
         }

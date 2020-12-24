@@ -186,7 +186,7 @@ function register(){
               throw new Exception("this phone doesn't exit");
               } else { 
               $_SESSION['verify'] = true;
-              throw new Exception(1); 
+              throw new Exception(22); 
               
               }
               
