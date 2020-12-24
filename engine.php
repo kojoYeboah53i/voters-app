@@ -11,7 +11,7 @@ include 'hubtelsms/Hubtel/Api.php';
 include 'hubtelsms/vendor/autoload.php';
 
 
-$auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+// $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
     extract($_POST);
     if(!empty($phone)){
@@ -19,15 +19,16 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                     $this_phone = mysqli_real_escape_string($con, $phone);
                     try {
               
-                $result = mysqli_query($con, "SELECT * FROM  voters  WHERE phone = $this_phone");
-                if(!$result){
+                $results = mysqli_query($con, "SELECT * FROM  voters ");
+                if(!$results){
                  throw new Exception( " query wrong check syntax". mysqli_error($con));
                 } else{
-                    while($row = mysqli_fetch_array($result)){
+                   
+                    while($row = mysqli_fetch_array($results)){
                         extract($row);
                         if ($phone == $this_phone){
-                             echo "successful";
-                             $_SESSION['user_id'] = $user_id;
+                             echo "success"; 
+                             $_SESSION['user_in'] = true;
 
                                     /************* */
                                         //send otp 
@@ -44,16 +45,15 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                         $phone =substr($phone, 1);
                                         $vendor = "E-VoterApp"; 
                             
-                                        $phone = "+233". $phone;
+                                        // $phone = "+233". $phone;
                                         
-                                        $apiHost = new ApiHost($auth);
+                                        // $apiHost = new ApiHost($auth);
                                         
-                                        $accountApi = new AccountApi($apiHost);
+                                        // $accountApi = new AccountApi($apiHost);
                                         
-                                        $disableConsoleLogging = false;
+                                        // $disableConsoleLogging = false;
                                         
-                                        $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        echo "sending airtime now";
+                                        // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
                                         // try {
                                         //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                                         
@@ -66,14 +66,13 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                         //    // echo  $ex->getTraceAsString();
                                         // }
 
-                        } else echo "phone not found";
+                        } 
                     }
                 }
         
 
             } catch (Exception $th) {
-                //throw $th;
-                echo $th->getMessage();
+                // echo $th->getMessage();
             }
 
      
