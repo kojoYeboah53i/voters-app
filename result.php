@@ -62,7 +62,7 @@
                        Voting Results 
                       </h2>
                       <br>
-                      <center>Presidental Elections</center>
+                      <center><h3 style = "color:rgb(42, 151, 153);">Presidental Elections</h3></center>
 
                      </center> 
                       
