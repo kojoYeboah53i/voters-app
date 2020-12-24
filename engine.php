@@ -11,7 +11,7 @@ include 'hubtelsms/Hubtel/Api.php';
 include 'hubtelsms/vendor/autoload.php';
 
 
-// $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+$auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
     extract($_POST);
     if(!empty($phone)){
@@ -45,26 +45,26 @@ include 'hubtelsms/vendor/autoload.php';
                                         $phone =substr($phone, 1);
                                         $vendor = "E-VoterApp"; 
                             
-                                        // $phone = "+233". $phone;
+                                        $phone = "+233". $phone;
                                         
-                                        // $apiHost = new ApiHost($auth);
+                                        $apiHost = new ApiHost($auth);
                                         
-                                        // $accountApi = new AccountApi($apiHost);
+                                        $accountApi = new AccountApi($apiHost);
                                         
-                                        // $disableConsoleLogging = false;
+                                        $disableConsoleLogging = false;
                                         
-                                        // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        // try {
-                                        //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
+                                        $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+                                        try {
+                                            $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                                         
-                                        //     if ($messageResponse instanceof MessageResponse) {
-                                        //        // echo $messageResponse->getStatus();
-                                        //     } elseif ($messageResponse instanceof HttpResponse) {
-                                        //        // echo "\nServer Response Status : " . $messageResponse->getStatus();
-                                        //     }
-                                        // } catch (Exception $ex) {
-                                        //    // echo  $ex->getTraceAsString();
-                                        // }
+                                            if ($messageResponse instanceof MessageResponse) {
+                                               // echo $messageResponse->getStatus();
+                                            } elseif ($messageResponse instanceof HttpResponse) {
+                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                            }
+                                        } catch (Exception $ex) {
+                                           // echo  $ex->getTraceAsString();
+                                        }
 
                         } 
                     }
