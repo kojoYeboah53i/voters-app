@@ -73,7 +73,8 @@
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                Adjoa Frimpong <br> #Total No. Votes : 15
+                                <h4>   Adjoa Frimpong <br> #Total No. Votes : 15 <br> </h4>
+                             <span "> <button class="btn btn-dark"style="background-color:blue;"> <h4 >Blue Team </h4></button></span>
                                 
                                 <div class="progress" style="margin-top: 30px;">
                                   <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
@@ -90,8 +91,8 @@
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                Adjoa Frimpong <br> #Total No. Votes : 15
-                                
+                                <h4>    Kofi Baboni <br> #Total No. Votes : 15 <br> </h4>
+                             <span style="color:#00ffff;"> <h4>Royal Team </h4></span>
                                 <div class="progress" style="margin-top: 30px;">
                                   <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
                                   aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color:rgb(42, 151, 153);">
@@ -107,7 +108,7 @@
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                Adjoa Frimpong <br> #Total No. Votes : 15
+                                <br> #Total No. Votes : 15
                                 
                                 <div class="progress" style="margin-top: 30px;">
                                   <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
