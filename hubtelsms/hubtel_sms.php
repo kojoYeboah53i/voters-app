@@ -5,8 +5,6 @@ require './vendor/autoload.php';
 require 'db.php';
 
 
-#txijtrnh
-#hmgiyfdn
 $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
    $phone = $_POST['phone'];

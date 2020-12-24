@@ -34,6 +34,15 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                     /************* */
                                         //send otp 
                                     /************* */
+                                        $verify_num =  rand();
+                                        $verify_num = substr($verify_num, 4);
+
+                                        
+                                         $result = "UPDATE voters set pin = '$verify_num' WHERE  user_id ='$user_id' ";
+                                         if(!$result){
+                                             throw new Exception( "failed to update pin" .mysqli_error($con));
+                                         }
+
                                         $phone =substr($phone, 1);
                                         $vendor = "E-VoterApp"; 
                             
@@ -100,7 +109,6 @@ function register(){
 
     
     
-       $phone = $_POST['phone'];
          $verify_num =  rand();
         $verify_num = substr($verify_num, 4);
 
@@ -178,7 +186,7 @@ function register(){
               throw new Exception("this phone doesn't exit");
               } else { 
               $_SESSION['verify'] = true;
-              throw new Exception("user is found"); 
+              throw new Exception(1); 
               
               }
               
@@ -189,4 +197,85 @@ function register(){
               exit();
               }  else echo "no phone number sent ";
               
+              }
+
+
+              function vote(){
+                  include 'db.php';
+
+                  extract($_POST);
+                  echo "positon" .$postion;
+                  echo  "candidate". $candidate;
+
+                  if(isset($candidate)){
+                    if($postion == "president"){
+
+                        
+                        switch ($candidate) {
+                            case "adjoa":
+                                $current_value;
+                            $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
+                            if(!$select){
+                                echo "failed to get current results from president" . mysqli_error($con);
+                             } else {
+                                $current_value + 1;
+                            
+                            $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                            if(!$result){
+                                echo "failed to update adjoa's vote" . mysqli_error($con);
+                             }
+                             }
+                            break;
+                            case "kofi":
+                                $current_value;
+                                $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
+                                if(!$select){
+                                    echo "failed to get current results from president" . mysqli_error($con);
+                                 } else {
+                                    $current_value + 1;
+                                
+                                $result = mysqli_query($con, "UPDATE president set kofi = $current_value");
+                                if(!$result){
+                                    echo "failed to update adjoa's vote" . mysqli_error($con);
+                                 }
+                                 }
+                            break;
+                            case "yaw":
+                                $current_value;
+                                $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
+                                if(!$select){
+                                    echo "failed to get current results from president" . mysqli_error($con);
+                                 } else {
+                                    $current_value + 1;
+                                
+                                $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                                if(!$result){
+                                    echo "failed to update adjoa's vote" . mysqli_error($con);
+                                 }
+                                 }
+                            break;
+                            case "afia";
+                            $current_value;
+                            $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
+                            if(!$select){
+                                echo "failed to get current results from president" . mysqli_error($con);
+                             } else {
+                                $current_value + 1;
+                            
+                            $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                            if(!$result){
+                                echo "failed to update adjoa's vote" . mysqli_error($con);
+                             }
+                             }
+                             break;
+                            default:
+                            echo "no vote was cast";
+                        }
+
+                    }
+
+
+                  }else {
+                      echo "no candidate selected..!";
+                  }
               }
