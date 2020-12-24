@@ -38,9 +38,13 @@ beforeSend: function(){
 
 success: function(response, textStatus, jqXHR) {
    console.log(response);
-   
-   $('p.login-box-msg').html(response);
-  if(response == 'successful'){
+   if (response.indexOf("Warning")){
+     console.log(response)
+   }else {
+    $('p.login-box-msg').html(response);
+
+   }
+    if (response.indexOf("success")){
   window.location = "./verify.php";
   }
 
