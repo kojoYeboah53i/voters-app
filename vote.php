@@ -8,6 +8,7 @@ if(!isset($_SESSION['user_in'])){
     header('location: index.html');
 } 
 if($_SESSION['verify'] == false){
+  
   header('location: verify.php');
 
 }

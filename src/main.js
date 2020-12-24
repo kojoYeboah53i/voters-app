@@ -81,15 +81,19 @@ $('#register-user').click(function (e) {
 
      },
       success: function (response) {
-        console.log(response);
-        $('p.box-msg-r').html(response);
-       setTimeout(() => {
-      window.location = "./verify.php";
-       
-     }, 3000);
-        
-       
-     }
+        console.log(response); 
+        if (  response.indexOf("registration_successful")  > -1 ){
+          $('p.box-msg-r').css('color', 'green');
+          $('p.box-msg-r').html(" Registration successful..!");
+            setTimeout(() => {
+              window.location = "./verify.php";
+              
+            }, 3000);
+        } else{
+          $('p.box-msg-r').css('color', 'red');
+          $('p.box-msg-r').html(" Registration failed..!");
+        }
+      }
    });
 });
 
