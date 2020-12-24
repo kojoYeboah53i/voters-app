@@ -40,12 +40,11 @@ success: function(response, textStatus, jqXHR) {
    console.log(response);
  
    
-    if (response.indexOf("success")){
+    if (    response.indexOf("user_log_in_successful")  > -1 ){
     $('p.login-box-msg').css('color', 'green');
     $('p.login-box-msg').html(" login successful..!");
       setTimeout(() => {
-        $('p.login-box-msg').fadeOut('slow');
-        // window.location = "./verify.php";
+        window.location = "./verify.php";
         
       }, 3000);
   } else{

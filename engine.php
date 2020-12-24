@@ -27,7 +27,7 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                     while($row = mysqli_fetch_array($results)){
                         extract($row);
                         if ($phone == $this_phone){
-                             echo "success"; 
+                             echo "user_log_in_successful"; 
                              $_SESSION['user_in'] = true;
 
                                     /************* */
@@ -108,9 +108,9 @@ function register(){
          $verify_num =  rand();
         $verify_num = substr($verify_num, 4);
 
-        /************** */
+        /*********************/
             //insert phone
-        /************** */
+        /**********************/
         try {
     
         $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
@@ -121,9 +121,8 @@ function register(){
         if(!$result){
             echo "phone not found...!";
         } else {
-            while($row = mysqli_fetch_array($result)){
-                $_SESSION['user_id'] = $row['user_id'];
-            }
+            $_SESSION['user_in'] = true;
+            echo "registration_successful";
         }
 
         }

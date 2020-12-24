@@ -2,16 +2,15 @@
 
 session_start();
 
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['user_in'])){
 
     
     header('location: index.html');
-} else {
-
-    $user_id  = $_SESSION['user_id'];
+} 
+if($_SESSION['verify'] == false){
+  header('location: verify.php');
 
 }
-
 
 ?>
 
