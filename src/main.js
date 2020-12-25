@@ -41,14 +41,14 @@ success: function(response, textStatus, jqXHR) {
  
    
     if (    response.indexOf("user_log_in_successful")  > -1 ){
-    $('p.login-box-msg').css('color', 'green');
+    $('p.login-box-msg').css('background-color', 'green');
     $('p.login-box-msg').html(" login successful..!");
       setTimeout(() => {
         window.location = "./verify.php";
         
       }, 3000);
   } else{
-    $('p.login-box-msg').css('color', 'red');
+    $('p.login-box-msg').css('background-color', 'red');
     $('p.login-box-msg').html(" phone not found");
   }
 
@@ -63,73 +63,62 @@ success: function(response, textStatus, jqXHR) {
 });
 
 
-
 $('#register-user').click(function (e) { 
   e.preventDefault(); 
- 
+  var formdata = {
+  phone : $('#phone1').val(),
+  name  : $('#name1').val()
+    }
 
    $.ajax({
      type: "POST",
      url: "./route.php?func=register",
      contentType: "application/json",
-     dataType: "json",        
-     data: JSON.stringify({
-        phone : $('#phone1').val(),
-        name  : $('#name1').val()
-     }),
+     dataType: "json",       
+     data: formdata,
      beforeSend: function () {
        $('.msg-board-r').fadeIn();
        $('.msg-board-r h4').html("Loading..!");
        console.log("sending")
-       setTimeout(() => {
-        $('.msg-board-r').fadeOut();
-      }, 3000);
+
 
      },
       success: function (response) {
         console.log(response); 
-        let json = $.parseJSON(response);
-         console.log(json['new_user']); 
-         console.log(json['phone']); 
-         console.log(json['data_recieved']); 
-        if (  json['new_user']  > -1 ){
+        // let json = $.parseJSON(response);
+         console.log(response['new_user']); 
+         console.log(response['phone']); 
+         console.log(response['data_recieved'); 
+        if (  response['new_user']  > -1 ){
           $('.msg-board-r').fadeIn();
-          $('.msg-board-r').css('color', 'green');
+          $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html("New user identified..!");
           $('.msg-board-r h4').html(" Registration successful..!");
-            setTimeout(() => {
-              $('.msg-board-r').fadeOut();
-            }, 3000);
+    
         } else{
           $('.msg-board-r').fadeIn();
 
-          $('.msg-board-r').css('color', 'red');
+          $('button.msg-board-r').css('background-color', 'red');
           $('.msg-board-r h4').html(" Registration failed..!");
-          setTimeout(() => {
-            $('.msg-board-r').fadeOut();
-          }, 3000);
+
 
         }
 
-        if(json['data_received'] == 'yes'){
+        if(response['data_received'] == 'yes'){
           $('.msg-board-r').fadeIn();
-          $('.msg-board-r').css('color', 'green');
+          $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html("data recieved at the backend.!");
 
         } else{
           $('.msg-board-r').fadeIn();
-          $('.msg-board-r').css('color', 'red');
+          $('button.msg-board-r').css('background-color', 'red');
           $('.msg-board-r h4').html("no data recieved at the backend.!");
         }
 
         //default
         setTimeout(() => {
-          $('.msg-board-r').fadeIn();
-        $('.msg-board-r h4').html("default text");
-      }, 5000);
-        setTimeout(() => {
           $('.msg-board-r').fadeOut();
-        }, 3000);
+        }, 5000);
       }
    });
 });

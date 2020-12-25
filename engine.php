@@ -7,11 +7,11 @@
 /*********************/
 function login_user(){
 include 'db.php';
-include 'hubtelsms/Hubtel/Api.php'; 
-include 'hubtelsms/vendor/autoload.php';
+// include 'hubtelsms/Hubtel/Api.php'; 
+// include 'hubtelsms/vendor/autoload.php';
 
 
-$auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+// $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
     extract($_POST);
     if(!empty($phone)){
@@ -42,29 +42,29 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
                                              throw new Exception( "failed to update pin" .mysqli_error($con));
                                          }
 
-                                        $phone =substr($phone, 1);
-                                        $vendor = "E-VoterApp"; 
+                                        // $phone =substr($phone, 1);
+                                        // $vendor = "E-VoterApp"; 
                             
-                                        $phone = "+233". $phone;
+                                        // $phone = "+233". $phone;
                                         
-                                        $apiHost = new ApiHost($auth);
+                                        // $apiHost = new ApiHost($auth);
                                         
-                                        $accountApi = new AccountApi($apiHost);
+                                        // $accountApi = new AccountApi($apiHost);
                                         
-                                        $disableConsoleLogging = false;
+                                        // $disableConsoleLogging = false;
                                         
-                                        $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        try {
-                                            $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
+                                        // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+                                        // try {
+                                        //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                                         
-                                            if ($messageResponse instanceof MessageResponse) {
-                                               // echo $messageResponse->getStatus();
-                                            } elseif ($messageResponse instanceof HttpResponse) {
-                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
-                                            }
-                                        } catch (Exception $ex) {
-                                           // echo  $ex->getTraceAsString();
-                                        }
+                                        //     if ($messageResponse instanceof MessageResponse) {
+                                        //        // echo $messageResponse->getStatus();
+                                        //     } elseif ($messageResponse instanceof HttpResponse) {
+                                        //        // echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                        //     }
+                                        // } catch (Exception $ex) {
+                                        //    // echo  $ex->getTraceAsString();
+                                        // }
 
                         } 
                     }
@@ -99,16 +99,16 @@ function register(){
     
   
    // $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
-    // extract($_POST);
+    extract($_POST);
 
-    $json = file_get_contents('php://input');
-    $json = $json_decode($json, true);
+    // $json = file_get_contents('php://input');
+    // $json = $json_decode($json, true);
 
     
-    if(isset($json['phone'])){
+    if(isset($phone)){
         // $phone = $json['phone'];
         $output[] = array(
-              "phone" =>  $json['phone'],
+              "phone" =>  $phone,
               "data_received" => "yes",
                "new_user" => 1
         );
@@ -172,7 +172,7 @@ function register(){
 
             else {
                 $output[] = array(
-                    "phone_sent" => -1,
+                    "phone" => "no phone sent",
                     "data_received" => -"no",
                      "new_user" => -1
               );
