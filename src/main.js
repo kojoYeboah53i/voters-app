@@ -112,42 +112,27 @@ $('#register-user').click(function (e) {
          console.log((json.new_user)); 
          console.log(json.data_received); 
          console.log(json.phone); 
-         if (  json.phone < 1 ){
+         if (  json.phone < -1 ){
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'red');
           $('.msg-board-r h4').html("Enter a valid phone e.g 024 XXX XXXX");
     
-        } else {
-
+        } else if (json.phone >= -4 &&  json.phone < 1) {
+          $('.msg-board-r').fadeIn();
+          $('button.msg-board-r').css('background-color', 'red');
+          $('.msg-board-r h4').html("phone already registered");
         
 
-        if (  json.new_user  > 1 ){
+        }else {
+
+        if (  json.new_user  > -1 ){
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'green');
-          $('.msg-board-r h4').html("New user identified..!");
           $('.msg-board-r h4').html(" Registration successful..!");
     
-        } else{
-          $('.msg-board-r').fadeIn();
-
-          $('button.msg-board-r').css('background-color', 'red');
-          $('.msg-board-r h4').html(" Registration failed..!");
-
-
-        }
+        } 
 
       }
-
-        // if(json.data_received == 'yes'){
-        //   $('.msg-board-r').fadeIn();
-        //   $('button.msg-board-r').css('background-color', 'green');
-        //   $('.msg-board-r h4').html("data recieved at the backend.!");
-
-        // } else{
-        //   $('.msg-board-r').fadeIn();
-        //   $('button.msg-board-r').css('background-color', 'red');
-        //   $('.msg-board-r h4').html("no data recieved at the backend.!");
-        // }
 
         //default
         // setTimeout(() => {
