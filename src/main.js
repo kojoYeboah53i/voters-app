@@ -71,7 +71,7 @@ $('#register-user').click(function (e) {
    $.ajax({
      type: "POST",
      url: "./route.php?func=register",
-     contentType: "application/json; charset=utf-8",
+     contentType: "application/json",
      dataType: "json",        
      data: JSON.stringify({
         phone : $('#phone1').val(),
@@ -79,7 +79,7 @@ $('#register-user').click(function (e) {
      }),
      beforeSend: function () {
        $('.msg-board-r').fadeIn();
-       $('.msg-board-r').html("Loading..!");
+       $('.msg-board-r h3').html("Reading..!");
        console.log("sending")
 
      },
@@ -88,17 +88,18 @@ $('#register-user').click(function (e) {
         let json = $.parseJSON(response);
         if (  json.new_user  > -1 ){
           $('.msg-board-r').css('color', 'green');
-          $('.msg-board-r').html("New user identified..!");
-          $('.msg-board-r').html(" Registration successful..!");
-          // $('p.box-msg-r').html(" Registration successful..!");
+          $('.msg-board-r h3').html("New user identified..!");
+          $('.msg-board-r h3').html(" Registration successful..!");
             setTimeout(() => {
-              // window.location = "./verify.php";
-              
+              $('.msg-board-r').fadeOut();
             }, 3000);
         } else{
 
           $('.msg-board-r').css('color', 'red');
-          $('.msg-board-r').html(" Registration failed..!");
+          $('.msg-board-r h3').html(" Registration failed..!");
+          setTimeout(() => {
+            $('.msg-board-r').fadeOut();
+          }, 3000);
 
         }
       }

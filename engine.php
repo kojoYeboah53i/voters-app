@@ -99,7 +99,7 @@ function register(){
     
   
     $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
-    extract($_POST);
+    // extract($_POST);
 
     $json = file_get_contents('php://input');
     $json = $json_decode($json);
