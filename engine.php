@@ -96,16 +96,19 @@ function register(){
     require 'db.php';
 
     extract($_POST);
-    
-    if(isset($phone)){
-        if ( ! strlen($phone)  > 9 && strlen($phone) < 11 ) {
+
+    if(empty($phone)){
+             
             $output = array(
-                "phone" =>  $phone,
-                "data_received" => "no",
+                "phone" =>  -1,
+                "data_received" => "no phone",
                  "new_user" => -1
                   );             
                   echo $output = json_encode($output);
-        }
+        
+    }
+    
+    if(isset($phone)){
 
 
        if ( strlen($phone)  > 9 && strlen($phone) < 11 ) {
@@ -125,7 +128,7 @@ function register(){
 
                     $output = array(
                         "phone" =>  $phone,
-                        "data_received" => "yes",
+                        "data_received" => "user already in database",
                          "new_user" => -1
                           );             
                           echo $output = json_encode($output);
@@ -158,10 +161,10 @@ function register(){
                 
      } else {
              $output = array(
-                  "phone" => "no phone sent",
-                  "data_received" => "no",
-                   "new_user" => -1
-              );
+            "phone" =>  2,
+            "data_received" => "invalid phone",
+             "new_user" => -1
+              );  
 
               echo $output = json_encode($output);
             }

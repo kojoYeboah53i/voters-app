@@ -1,6 +1,28 @@
 $(function () {
-  // alert('hello world')
+ 
 });
+
+
+
+$("input.page-item.pin-1").focus(function (e) { 
+  e.preventDefault();
+
+    setTimeout(() => {
+      alert("change")
+      $('.pin-2').focus();
+    }, 3000);
+
+})
+
+
+$(" input.page-item.pin-2").focus(function (e) { 
+  e.preventDefault();
+
+  setTimeout(() => {
+    $('.pin-1').focus();
+  }, 3000);
+
+})
 
 
 $('#president').click(function (e) { 
@@ -90,12 +112,14 @@ $('#register-user').click(function (e) {
          console.log((json.new_user)); 
          console.log(json.data_received); 
          console.log(json.phone); 
-         if (  json.data_received == "no" ){
+         if (  json.phone < 1 ){
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'red');
-          $('.msg-board-r h4').html("no phone enter a valid phone  e.g 024 XXX XXXX");
+          $('.msg-board-r h4').html("Enter a valid phone e.g 024 XXX XXXX");
     
-        }
+        } else {
+
+        
 
         if (  json.new_user  > 1 ){
           $('.msg-board-r').fadeIn();
@@ -111,6 +135,8 @@ $('#register-user').click(function (e) {
 
 
         }
+
+      }
 
         // if(json.data_received == 'yes'){
         //   $('.msg-board-r').fadeIn();
@@ -130,6 +156,8 @@ $('#register-user').click(function (e) {
       }
    });
 });
+
+
 
 
 $('.verify').click(function (e) { 

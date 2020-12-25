@@ -1,10 +1,10 @@
 <?php
-session_start();
-if(!isset($_SESSION['user_in'])){
+// session_start();
+// if(!isset($_SESSION['user_in'])){
 
     
-header('location: index.html');
-}
+// header('location: index.html');
+// }
 ?>
 
 
@@ -64,6 +64,8 @@ header('location: index.html');
                       </h5>
 
                       <form class="form-signin verification-form">
+                        <input class="page-item pin-1" >
+                        <input class="page-item pin-2">
                         <input type="number" id="pin" class="form-control" placeholder="only enter numbers " required autofocus>
                         <br>
                   
