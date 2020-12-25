@@ -93,17 +93,25 @@ $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
 function register(){
 
-    include './hubtelsms/Hubtel/Api.php'; 
-    include './hubtelsms/vendor/autoload.php';
+   // include './hubtelsms/Hubtel/Api.php'; 
+   // include './hubtelsms/vendor/autoload.php';
     require 'db.php';
     
   
     $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
     extract($_POST);
 
-    if(isset($phone)){
+    $json = file_get_contents('php://input');
+    $json = $json_decode($json);
 
     
+    if(isset($json->$phone)){
+        $output[] = array(
+              "phone_sent" => 1,
+               "new_user" => 1
+        );
+        
+        echo $output = json_encode($output);
     
          $verify_num =  rand();
         $verify_num = substr($verify_num, 4);
@@ -111,25 +119,25 @@ function register(){
         /*********************/
             //insert phone
         /**********************/
-        try {
+        // try {
     
-        $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
-        if(!$result){
-            throw new Exception("failed to insert new user" . mysqli_error($con));
-        } else {
-        $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $phone");
-        if(!$result){
-            echo "phone not found...!";
-        } else {
-            $_SESSION['user_in'] = true;
-            echo "registration_successful";
-        }
+        // $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
+        // if(!$result){
+        //     throw new Exception("failed to insert new user" . mysqli_error($con));
+        // } else {
+        // $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $phone");
+        // if(!$result){
+        //     echo "phone not found...!";
+        // } else {
+        //     $_SESSION['user_in'] = true;
+        //     echo "registration_successful";
+        // }
 
-        }
+        // }
 
-            } catch (Exception $th) {
-                echo $th->getMessage();
-            }
+        //     } catch (Exception $th) {
+        //         echo $th->getMessage();
+        //     }
 
             /************* */
             //send otp 
@@ -139,24 +147,24 @@ function register(){
       
                 $phone = "+233". $phone;
                 
-                $apiHost = new ApiHost($auth);
+           //     $apiHost = new ApiHost($auth);
                 
-                $accountApi = new AccountApi($apiHost);
+               // $accountApi = new AccountApi($apiHost);
                 
-                $disableConsoleLogging = false;
+             //   $disableConsoleLogging = false;
                 
-                $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                try {
-                    $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
+                // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+                // try {
+                //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
                 
-                    if ($messageResponse instanceof MessageResponse) {
-                      //  echo $messageResponse->getStatus();
-                    } elseif ($messageResponse instanceof HttpResponse) {
-                      //  echo "\nServer Response Status : " . $messageResponse->getStatus();
-                    }
-                } catch (Exception $ex) {
-                  //  echo  $ex->getTraceAsString();
-                }
+                //     if ($messageResponse instanceof MessageResponse) {
+                //       //  echo $messageResponse->getStatus();
+                //     } elseif ($messageResponse instanceof HttpResponse) {
+                //       //  echo "\nServer Response Status : " . $messageResponse->getStatus();
+                //     }
+                // } catch (Exception $ex) {
+                //   //  echo  $ex->getTraceAsString();
+                // }
                 
             }
 

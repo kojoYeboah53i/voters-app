@@ -66,32 +66,40 @@ success: function(response, textStatus, jqXHR) {
 
 $('#register-user').click(function (e) { 
   e.preventDefault(); 
-   var formData = {
-     phone : $('#phone1').val(),
-     name  : $('#name1').val()
-   }
+ 
 
    $.ajax({
      type: "POST",
      url: "./route.php?func=register",
-     data: formData,
+     contentType: "application/json; charset=utf-8",
+     dataType: "json",        
+     data: JSON.stringify({
+        phone : $('#phone1').val(),
+        name  : $('#name1').val()
+     }),
      beforeSend: function () {
+       $('.msg-board-r').fadeIn();
+       $('.msg-board-r').html("Loading..!");
        console.log("sending")
-      console.log(formData)
 
      },
       success: function (response) {
         console.log(response); 
-        if (  response.indexOf("registration_successful")  > -1 ){
-          $('p.box-msg-r').css('color', 'green');
-          $('p.box-msg-r').html(" Registration successful..!");
+        let json = $.parseJSON(response);
+        if (  json.new_user  > -1 ){
+          $('.msg-board-r').css('color', 'green');
+          $('.msg-board-r').html("New user identified..!");
+          $('.msg-board-r').html(" Registration successful..!");
+          // $('p.box-msg-r').html(" Registration successful..!");
             setTimeout(() => {
-              window.location = "./verify.php";
+              // window.location = "./verify.php";
               
             }, 3000);
         } else{
-          $('p.box-msg-r').css('color', 'red');
-          $('p.box-msg-r').html(" Registration failed..!");
+
+          $('.msg-board-r').css('color', 'red');
+          $('.msg-board-r').html(" Registration failed..!");
+
         }
       }
    });
