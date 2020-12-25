@@ -63,15 +63,19 @@
                         Enter your verification pin
                       </h5>
 
-                      <form class="form-signin verification-form">
-                        <input class="page-item pin-1" >
-                        <input class="page-item pin-2">
-                        <input type="number" id="pin" class="form-control" placeholder="only enter numbers " required autofocus>
+                      <form class="form-signin verification-form" style="display: inline-flex;">
+                        <input class="page-item pin"  id="first-box" type="text" 
+                        style="width: 50px;  border : 4px solid #23c79e; height: 40px; margin: 3px; padding: 4px;">
+                        <input class="page-item pin" id="second-box" type="text"  style="width: 50px;  border : 4px solid #23c79e; height: 40px; margin: 3px; padding: 4px;">
+                        <input class="page-item pin" id="third-box" type="text"  style="width: 50px;  border : 4px solid #23c79e; height: 40px; margin: 3px; padding: 4px;">
+                        <input class="page-item pin" id="fourth-box" type="text"  style="width: 50px;  border : 4px solid #23c79e; height: 40px; margin: 3px; padding: 4px;">
+                        <!-- <input type="number" id="pin" class="form-control" placeholder="only enter numbers " required autofocus> -->
                         <br>
                   
-                        <button class="btn btn-lg btn-primary btn-block verify" type="submit">Verify</button>
                        
                         </form>
+                        <button class="btn btn-lg btn-primary btn-block verify" type="submit">Verify</button>
+
                     </div>
                    
 

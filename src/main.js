@@ -3,27 +3,28 @@ $(function () {
 });
 
 
+/************* */
+  //auto focus at verify pin
+/************* */
 
-$("input.page-item.pin-1").focus(function (e) { 
-  e.preventDefault();
+$('#first-box').keypress(function (e) { 
+  console.log($('#first-box').val());
+  $('#second-box').focus();
+});
 
-    setTimeout(() => {
-      alert("change")
-      $('.pin-2').focus();
-    }, 3000);
+$('#fourth-box').keypress(function (e) { 
+  console.log($('#fourth-box').val());
+  $('#first-box').focus();
+});
+$('#second-box').keypress(function (e) { 
+  console.log($('#second-box').val());
+  $('#third-box').focus();
+  
+});
 
-})
-
-
-$(" input.page-item.pin-2").focus(function (e) { 
-  e.preventDefault();
-
-  setTimeout(() => {
-    $('.pin-1').focus();
-  }, 3000);
-
-})
-
+$('#third-box').keypress(function (e) { 
+  $('#fourth-box').focus();
+});
 
 $('#president').click(function (e) { 
   e.preventDefault();
@@ -84,7 +85,7 @@ success: function(response, textStatus, jqXHR) {
 
 });
 
-alert("fiel is working right");
+alert("this page is under construction come back in a few hours");
 
 $('#register-user').click(function (e) { 
   e.preventDefault(); 
@@ -143,32 +144,70 @@ $('#register-user').click(function (e) {
 });
 
 
+function send_otp(pin, phone_){
+
+  if(pin != ""){
+
+    var  FormData = {
+      pin : pin,
+      phone : phone_
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "./route.php?func=send_otp",
+      dataType: "html",        
+      data: formdata,
+      beforeSend: function () {
+        $('.msg-board-r').fadeIn();
+        $('.msg-board-r h4').html("Loading..!");
+        console.log("sending")
+ 
+ 
+      },
+       success: function (response) {
+         console.log(response); 
+
+
+  }
+
+
+
+}
 
 
 $('.verify').click(function (e) { 
   e.preventDefault();
-  let verify_num = $('#pin').val();
+  // let verify_num = $('#pin').val();
+  var formdata = {
+    first_box : $('#first-box').val(),
+    second_box : $('#second-box').val(),
+    third_box : $('#third-box').val(),
+    fourth_box : $('#fourth-box').val()
+  }
 
-  $.ajax({
-    type: "post",
-    url: "./route.php?func=verify_phone_",
-    data: {verify_num : verify_num},
-    beforeSend: function () {
-      console.log("sending pin")
-     console.log(verify_num)
+  console.log(formdata)
 
-    },
-    success: function (response) {
-      console.log(response)
-      $('p.box-msg-v').html(response);
-      if(response >= 20){
-        window.location = "./vote.php";
+  // $.ajax({
+  //   type: "post",
+  //   url: "./route.php?func=verify_phone_",
+  //   data: {verify_num : verify_num},
+  //   beforeSend: function () {
+  //     console.log("sending pin")
+  //    console.log(verify_num)
 
-        }
+  //   },
+  //   success: function (response) {
+  //     console.log(response)
+  //     $('p.box-msg-v').html(response);
+  //     if(response >= 20){
+  //       window.location = "./vote.php";
+
+  //       }
 
       
-    }
-  });
+  //   }
+  // });
   
 });
 

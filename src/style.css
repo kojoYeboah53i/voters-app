@@ -78,6 +78,15 @@ width: 300px;  position: relative; top: -200px; right: -245px;
 .verify{
   background-color: #23c79e;
 }
+
+#first-box{
+  border : 1px solid #23c79e;
+  height: 70px;
+  width: 70px;
+  margin: 3px;
+  padding: 4px;
+
+}
 .form-signin {
   width: 100%;
   max-width: 330px;
