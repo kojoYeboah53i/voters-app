@@ -98,6 +98,17 @@ function register(){
     extract($_POST);
     
     if(isset($phone)){
+        if ( ! strlen($phone)  > 9 && strlen($phone) < 11 ) {
+            $output = array(
+                "phone" =>  $phone,
+                "data_received" => "no",
+                 "new_user" => -1
+                  );             
+                  echo $output = json_encode($output);
+        }
+
+
+       if ( strlen($phone)  > 9 && strlen($phone) < 11 ) {
 
         /*********************/
             //insert phone
@@ -105,9 +116,12 @@ function register(){
         try {
 
             $verify_num =  rand();
+
             $verify_num = substr($verify_num, 4);
+
+
             $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = '$phone' ");
-                if($result){
+                if($results){
 
                     $output = array(
                         "phone" =>  $phone,
@@ -141,21 +155,19 @@ function register(){
                // echo $th->getMessage();
             }
 
-
                 
-            }
-
-            else {
-                $output = array(
-                    "phone" => "no phone sent",
-                    "data_received" => -"no",
-                     "new_user" => -1
+     } else {
+             $output = array(
+                  "phone" => "no phone sent",
+                  "data_received" => "no",
+                   "new_user" => -1
               );
 
               echo $output = json_encode($output);
             }
+        }
 
-            }
+    }
 
 
 

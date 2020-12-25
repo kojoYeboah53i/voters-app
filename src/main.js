@@ -90,7 +90,14 @@ $('#register-user').click(function (e) {
          console.log((json.new_user)); 
          console.log(json.data_received); 
          console.log(json.phone); 
-        if (  json.new_user  > -1 ){
+         if (  json.data_received == "no" ){
+          $('.msg-board-r').fadeIn();
+          $('button.msg-board-r').css('background-color', 'red');
+          $('.msg-board-r h4').html("no phone enter a valid phone  e.g 024 XXX XXXX");
+    
+        }
+
+        if (  json.new_user  > 1 ){
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html("New user identified..!");
