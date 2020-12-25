@@ -93,80 +93,55 @@ include 'db.php';
 
 function register(){
 
-   // include './hubtelsms/Hubtel/Api.php'; 
-   // include './hubtelsms/vendor/autoload.php';
     require 'db.php';
-    
-  
-   // $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+
     extract($_POST);
-
-    // $json = file_get_contents('php://input');
-    // $json = $json_decode($json, true);
-
     
     if(isset($phone)){
-        // $phone = $json['phone'];
-        $output = array(
-              "phone" =>  $phone,
-              "data_received" => "yes",
-               "new_user" => -1
-        );
-        
-        echo $output = json_encode($output);
-    
-         $verify_num =  rand();
-         $verify_num = substr($verify_num, 4);
 
         /*********************/
             //insert phone
         /**********************/
-        // try {
-    
-        // $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
-        // if(!$result){
-        //     throw new Exception("failed to insert new user" . mysqli_error($con));
-        // } else {
-        // $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $phone");
-        // if(!$result){
-        //     echo "phone not found...!";
-        // } else {
-        //     $_SESSION['user_in'] = true;
-        //     echo "registration_successful";
-        // }
+        try {
 
-        // }
+            $verify_num =  rand();
+            $verify_num = substr($verify_num, 4);
+            $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = '$phone' ");
+                if($result){
 
-        //     } catch (Exception $th) {
-        //         echo $th->getMessage();
-        //     }
+                    $output = array(
+                        "phone" =>  $phone,
+                        "data_received" => "yes",
+                         "new_user" => -1
+                          );             
+                          echo $output = json_encode($output);
+                
+                      } else {
+                          throw new Exception(mysqli_error($con));
+                   $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
+                  if(!$result){
+                      throw new Exception("failed to insert new user" . mysqli_error($con));
+                      } else {
+                                    #set session user_in to true
+                            $_SESSION['user_in'] = true;
 
-            /************* */
-            //send otp 
-            /************* */
-                $phone =substr($phone, 1);
-                $vendor = "E-VoterApp"; 
-      
-                $phone = "+233". $phone;
-                
-           //     $apiHost = new ApiHost($auth);
-                
-               // $accountApi = new AccountApi($apiHost);
-                
-             //   $disableConsoleLogging = false;
-                
-                // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                // try {
-                //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
-                
-                //     if ($messageResponse instanceof MessageResponse) {
-                //       //  echo $messageResponse->getStatus();
-                //     } elseif ($messageResponse instanceof HttpResponse) {
-                //       //  echo "\nServer Response Status : " . $messageResponse->getStatus();
-                //     }
-                // } catch (Exception $ex) {
-                //   //  echo  $ex->getTraceAsString();
-                // }
+                            $output = array(
+                            "phone" =>  $phone,
+                            "pin" =>  $verify_num,
+                            "data_received" => "yes",
+                            "new_user" => 1
+                            );
+          
+                         echo $output = json_encode($output);
+                    }
+
+                }
+                 
+            } catch (Exception $th) {
+               // echo $th->getMessage();
+            }
+
+
                 
             }
 
@@ -181,6 +156,51 @@ function register(){
             }
 
             }
+
+
+
+
+
+
+
+
+            /***************** */
+                //send otp to  phone
+        /********************************* */
+        function send_otp(){
+                extract($_POST);
+                if(isset($phone) && isset($pin)){
+                    $phone =substr($phone, 1);
+                    $vendor = "E-VoterApp"; 
+     
+                    $phone = "+233". $phone;
+               
+          //     $apiHost = new ApiHost($auth);
+               
+              // $accountApi = new AccountApi($apiHost);
+               
+            //   $disableConsoleLogging = false;
+               
+               // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+               // try {
+               //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
+               
+               //     if ($messageResponse instanceof MessageResponse) {
+               //       //  echo $messageResponse->getStatus();
+               //     } elseif ($messageResponse instanceof HttpResponse) {
+               //       //  echo "\nServer Response Status : " . $messageResponse->getStatus();
+               //     }
+               // } catch (Exception $ex) {
+               //   //  echo  $ex->getTraceAsString();
+               // }
+
+                } else {
+
+                }
+      
+        }
+
+
 
 
             function verify_phone_(){
