@@ -97,16 +97,16 @@ function register(){
 
     extract($_POST);
 
-    if(empty($phone)){
+    // if(empty($phone)){
              
-            $output = array(
-                "phone" =>  -1,
-                "data_received" => "no phone",
-                 "new_user" => -1
-                  );             
-                  echo $output = json_encode($output);
+    //         $output = array(
+    //             "phone" =>  -1,
+    //             "data_received" => "no phone",
+    //              "new_user" => -1
+    //               );             
+    //               echo $output = json_encode($output);
         
-    }
+    // }
     
     if(isset($phone)){
 
@@ -123,18 +123,20 @@ function register(){
             $verify_num = substr($verify_num, 4);
 
 
-            $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = '$phone' ");
-                if($results){
+           $r = mysqli_query($con,  "SELECT * FROM voters WHERE phone = '$phone' ");
+           if(mysqli_num_rows($r) > 0 ) {
 
-                    $output = array(
-                        "phone" =>  $phone,
-                        "data_received" => "user already in database",
-                         "new_user" => -1
-                          );             
-                          echo $output = json_encode($output);
+                    while ($row = mysqli_fetch_array($r))
+                        $output = array(
+                            "phone" =>  -1,
+                            "data_received" => "user already register name is  " . $row['firstname'],
+                             "new_user" => -1
+                              );             
+                              echo $output = json_encode($output);
+                    
+           
                 
                       } else {
-                          throw new Exception(mysqli_error($con));
                    $result = mysqli_query($con, "INSERT INTO voters (firstname, phone, pin) Values ('$name', '$phone', '$verify_num')");
                   if(!$result){
                       throw new Exception("failed to insert new user" . mysqli_error($con));
@@ -161,8 +163,8 @@ function register(){
                 
      } else {
              $output = array(
-            "phone" =>  2,
-            "data_received" => "invalid phone",
+            "phone" =>  -4,
+            "data_received" => "no phone sent",
              "new_user" => -1
               );  
 
