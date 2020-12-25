@@ -130,15 +130,12 @@ $('#register-user').click(function (e) {
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html(" Registration successful..!");
+          send_otp(json.pin, json.phone);
     
         } 
 
       }
 
-        //default
-        // setTimeout(() => {
-        //   $('.msg-board-r').fadeOut();
-        // }, 5000);
       }
    });
 });
@@ -153,25 +150,21 @@ function send_otp(pin, phone_){
       phone : phone_
     }
 
+
     $.ajax({
       type: "POST",
       url: "./route.php?func=send_otp",
       dataType: "html",        
-      data: formdata,
+      data: FormData,
       beforeSend: function () {
-        $('.msg-board-r').fadeIn();
-        $('.msg-board-r h4').html("Loading..!");
-        console.log("sending")
- 
- 
-      },
+        console.log("sending otp") },
        success: function (response) {
          console.log(response); 
-
+         window.location = './verify.php';
+       }
+    });
 
   }
-
-
 
 }
 

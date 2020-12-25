@@ -7,11 +7,7 @@
 /*********************/
 function login_user(){
 include 'db.php';
-// include 'hubtelsms/Hubtel/Api.php'; 
-// include 'hubtelsms/vendor/autoload.php';
 
-
-// $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
     extract($_POST);
     if(!empty($phone)){
@@ -42,29 +38,6 @@ include 'db.php';
                                              throw new Exception( "failed to update pin" .mysqli_error($con));
                                          }
 
-                                        // $phone =substr($phone, 1);
-                                        // $vendor = "E-VoterApp"; 
-                            
-                                        // $phone = "+233". $phone;
-                                        
-                                        // $apiHost = new ApiHost($auth);
-                                        
-                                        // $accountApi = new AccountApi($apiHost);
-                                        
-                                        // $disableConsoleLogging = false;
-                                        
-                                        // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        // try {
-                                        //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
-                                        
-                                        //     if ($messageResponse instanceof MessageResponse) {
-                                        //        // echo $messageResponse->getStatus();
-                                        //     } elseif ($messageResponse instanceof HttpResponse) {
-                                        //        // echo "\nServer Response Status : " . $messageResponse->getStatus();
-                                        //     }
-                                        // } catch (Exception $ex) {
-                                        //    // echo  $ex->getTraceAsString();
-                                        // }
 
                         } 
                     }
@@ -184,7 +157,13 @@ function register(){
             /***************** */
                 //send otp to  phone
         /********************************* */
-        function send_otp(){
+       function send_otp(){
+
+    include 'hubtelsms/Hubtel/Api.php'; 
+    include 'hubtelsms/vendor/autoload.php';
+
+    $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+
                 extract($_POST);
                 if(isset($phone) && isset($pin)){
                     $phone =substr($phone, 1);
@@ -192,28 +171,40 @@ function register(){
      
                     $phone = "+233". $phone;
                
-          //     $apiHost = new ApiHost($auth);
-               
-              // $accountApi = new AccountApi($apiHost);
-               
-            //   $disableConsoleLogging = false;
-               
-               // $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-               // try {
-               //     $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $verify_num");
-               
-               //     if ($messageResponse instanceof MessageResponse) {
-               //       //  echo $messageResponse->getStatus();
-               //     } elseif ($messageResponse instanceof HttpResponse) {
-               //       //  echo "\nServer Response Status : " . $messageResponse->getStatus();
-               //     }
-               // } catch (Exception $ex) {
-               //   //  echo  $ex->getTraceAsString();
-               // }
+                                        $phone =substr($phone, 1);
+                                        $vendor = "E-VoterApp"; 
+                            
+                                        $phone = "+233". $phone;
+                                        
+                                        $apiHost = new ApiHost($auth);
+                                        
+                                        $accountApi = new AccountApi($apiHost);
+                                        
+                                        $disableConsoleLogging = false;
+                                        
+                                        $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+                                        try {
+                                            $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $pin");
+                                        
+                                            if ($messageResponse instanceof MessageResponse) {
+                                               // echo $messageResponse->getStatus();
+                                            } elseif ($messageResponse instanceof HttpResponse) {
+                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                            }
+                                        } catch (Exception $ex) {
+                                           // echo  $ex->getTraceAsString();
+                                        }
+       
 
                 } else {
-
-                }
+                    $output = array(
+                        "phone" =>  -1,
+                        "data_received" => "failed to send otp phone number is missing",
+                          );  
+            
+                          echo $output = json_encode($output);
+                        }
+                
       
         }
 
