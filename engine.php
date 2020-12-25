@@ -107,16 +107,16 @@ function register(){
     
     if(isset($phone)){
         // $phone = $json['phone'];
-        $output[] = array(
+        $output = array(
               "phone" =>  $phone,
               "data_received" => "yes",
-               "new_user" => 1
+               "new_user" => -1
         );
         
         echo $output = json_encode($output);
     
          $verify_num =  rand();
-        $verify_num = substr($verify_num, 4);
+         $verify_num = substr($verify_num, 4);
 
         /*********************/
             //insert phone
@@ -171,7 +171,7 @@ function register(){
             }
 
             else {
-                $output[] = array(
+                $output = array(
                     "phone" => "no phone sent",
                     "data_received" => -"no",
                      "new_user" => -1

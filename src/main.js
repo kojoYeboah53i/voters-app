@@ -62,6 +62,7 @@ success: function(response, textStatus, jqXHR) {
 
 });
 
+alert("fiel is working right");
 
 $('#register-user').click(function (e) { 
   e.preventDefault(); 
@@ -73,8 +74,7 @@ $('#register-user').click(function (e) {
    $.ajax({
      type: "POST",
      url: "./route.php?func=register",
-     contentType: "application/json",
-     dataType: "json",       
+     dataType: "html",        
      data: formdata,
      beforeSend: function () {
        $('.msg-board-r').fadeIn();
@@ -85,11 +85,12 @@ $('#register-user').click(function (e) {
      },
       success: function (response) {
         console.log(response); 
-        // let json = $.parseJSON(response);
-         console.log(response['new_user']); 
-         console.log(response['phone']); 
-         console.log(response['data_recieved'); 
-        if (  response['new_user']  > -1 ){
+        let json = response;
+        json = $.parseJSON(json);
+         console.log((json.new_user)); 
+         console.log(json.data_received); 
+         console.log(json.phone); 
+        if (  json.new_user  > -1 ){
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html("New user identified..!");
@@ -104,21 +105,21 @@ $('#register-user').click(function (e) {
 
         }
 
-        if(response['data_received'] == 'yes'){
-          $('.msg-board-r').fadeIn();
-          $('button.msg-board-r').css('background-color', 'green');
-          $('.msg-board-r h4').html("data recieved at the backend.!");
+        // if(json.data_received == 'yes'){
+        //   $('.msg-board-r').fadeIn();
+        //   $('button.msg-board-r').css('background-color', 'green');
+        //   $('.msg-board-r h4').html("data recieved at the backend.!");
 
-        } else{
-          $('.msg-board-r').fadeIn();
-          $('button.msg-board-r').css('background-color', 'red');
-          $('.msg-board-r h4').html("no data recieved at the backend.!");
-        }
+        // } else{
+        //   $('.msg-board-r').fadeIn();
+        //   $('button.msg-board-r').css('background-color', 'red');
+        //   $('.msg-board-r h4').html("no data recieved at the backend.!");
+        // }
 
         //default
-        setTimeout(() => {
-          $('.msg-board-r').fadeOut();
-        }, 5000);
+        // setTimeout(() => {
+        //   $('.msg-board-r').fadeOut();
+        // }, 5000);
       }
    });
 });
