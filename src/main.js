@@ -79,29 +79,57 @@ $('#register-user').click(function (e) {
      }),
      beforeSend: function () {
        $('.msg-board-r').fadeIn();
-       $('.msg-board-r h3').html("Reading..!");
+       $('.msg-board-r h4').html("Loading..!");
        console.log("sending")
+       setTimeout(() => {
+        $('.msg-board-r').fadeOut();
+      }, 3000);
 
      },
       success: function (response) {
         console.log(response); 
         let json = $.parseJSON(response);
-        if (  json.new_user  > -1 ){
+         console.log(json['new_user']); 
+         console.log(json['phone']); 
+         console.log(json['data_recieved']); 
+        if (  json['new_user']  > -1 ){
+          $('.msg-board-r').fadeIn();
           $('.msg-board-r').css('color', 'green');
-          $('.msg-board-r h3').html("New user identified..!");
-          $('.msg-board-r h3').html(" Registration successful..!");
+          $('.msg-board-r h4').html("New user identified..!");
+          $('.msg-board-r h4').html(" Registration successful..!");
             setTimeout(() => {
               $('.msg-board-r').fadeOut();
             }, 3000);
         } else{
+          $('.msg-board-r').fadeIn();
 
           $('.msg-board-r').css('color', 'red');
-          $('.msg-board-r h3').html(" Registration failed..!");
+          $('.msg-board-r h4').html(" Registration failed..!");
           setTimeout(() => {
             $('.msg-board-r').fadeOut();
           }, 3000);
 
         }
+
+        if(json['data_received'] == 'yes'){
+          $('.msg-board-r').fadeIn();
+          $('.msg-board-r').css('color', 'green');
+          $('.msg-board-r h4').html("data recieved at the backend.!");
+
+        } else{
+          $('.msg-board-r').fadeIn();
+          $('.msg-board-r').css('color', 'red');
+          $('.msg-board-r h4').html("no data recieved at the backend.!");
+        }
+
+        //default
+        setTimeout(() => {
+          $('.msg-board-r').fadeIn();
+        $('.msg-board-r h4').html("default text");
+      }, 5000);
+        setTimeout(() => {
+          $('.msg-board-r').fadeOut();
+        }, 3000);
       }
    });
 });

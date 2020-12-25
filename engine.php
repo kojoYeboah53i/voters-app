@@ -98,16 +98,18 @@ function register(){
     require 'db.php';
     
   
-    $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+   // $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
     // extract($_POST);
 
     $json = file_get_contents('php://input');
-    $json = $json_decode($json);
+    $json = $json_decode($json, true);
 
     
-    if(isset($json->$phone)){
+    if(isset($json['phone'])){
+        // $phone = $json['phone'];
         $output[] = array(
-              "phone_sent" => 1,
+              "phone" =>  $json['phone'],
+              "data_received" => "yes",
                "new_user" => 1
         );
         
@@ -169,7 +171,13 @@ function register(){
             }
 
             else {
-                echo "no phone number entered..!";
+                $output[] = array(
+                    "phone_sent" => -1,
+                    "data_received" => -"no",
+                     "new_user" => -1
+              );
+
+              echo $output = json_encode($output);
             }
 
             }
