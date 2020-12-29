@@ -257,7 +257,7 @@ function register(){
                             if(!$select){
                                 echo "failed to get current results from president" . mysqli_error($con);
                              } else {
-                                $current_value + 1;
+                                $current_value += 1;
                             
                             $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
                             if(!$result){
