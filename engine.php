@@ -206,7 +206,7 @@ function register(){
                         }
                 
       
-        }
+        } 
 
 
 
@@ -317,4 +317,9 @@ function register(){
                   }else {
                       echo "no candidate selected..!";
                   }
+              }
+
+
+              function test_unit(){
+                  echo "route is working fine";
               }

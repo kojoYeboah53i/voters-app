@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost","root","","voters");
+$con = new mysqli("localhost","root","","e_voters");
 
 // Check connection
 if ($con -> connect_errno) {

@@ -160,7 +160,7 @@ function send_otp(pin, phone_){
         console.log("sending otp") },
        success: function (response) {
          console.log(response); 
-         window.location = './verify.php';
+        //  window.location = './verify.php';
        }
     });
 

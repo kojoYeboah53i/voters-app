@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['user_in'])){
+session_start();
+if(!isset($_SESSION['user_in'])){
 
     
-// header('location: index.html');
-// }
+header('location: index.html');
+}
 ?>
 
 
