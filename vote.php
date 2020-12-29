@@ -2,16 +2,16 @@
 
 session_start();
 
-if(!isset($_SESSION['user_in'])){
+// if(!isset($_SESSION['user_in'])){
 
     
-    header('location: index.html');
-} 
-if($_SESSION['verify'] == false){
+//     header('location: index.html');
+// } 
+// if($_SESSION['verify'] == false){
 
-  header('location: verify.php');
+//   header('location: verify.php');
 
-}
+// }
 
 ?>
 
@@ -93,14 +93,20 @@ if($_SESSION['verify'] == false){
                             </div>
               
                     
-                    <div class="col-6 col-sm-3 col-md-4  " style="margin-left: 360px; margin-top: -134px;">
-                         <div class="card-body">
-                                    <img src="./image/candidate-3.png" width="305" height="245" alt="" srcset="">
+                    <div class="col-6 col-sm-3 col-md-4 " style="margin-left: 360px; margin-top: -134px;">
+                    <div class="hoverme ">
+
+                         <div class="card-body" >
+                                    <img src="./image/candidate-3.png" style="z-index: -1;"  width="305" height="245" alt="" srcset="">
                            
                          <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
+                            <br><br>
                     
-                                <button type="button"  class="btn cta  btn-lg btn-block   "  id="shop-now"style="background:  #FF00FF; color: white">Magenta Team</button>
+                                <button type="button"  class="btn btn btn-block vote  " 
+                                 style=" background:  black; color: white; border: white solid 2px;margin-top:-40px; ">#vote</button>
+                                <button type="button"  class="btn btn-lg btn-block team  "  id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</button>
+                              </div>
                               </div>
                                 </div>
                        
