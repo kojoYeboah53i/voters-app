@@ -165,7 +165,8 @@ function send_otp(pin, phone_){
         console.log("sending otp") },
        success: function (response) {
          console.log(response); 
-        //  window.location = './verify.php';
+         window.location = './verify.php';
+
        }
     });
 
@@ -200,26 +201,25 @@ $('.verify').click(function (e) {
 
   console.log(formdata)
 
-  // $.ajax({
-  //   type: "post",
-  //   url: "./route.php?func=verify_phone_",
-  //   data: {verify_num : verify_num},
-  //   beforeSend: function () {
-  //     console.log("sending pin")
-  //    console.log(verify_num)
+  $.ajax({
+    type: "post",
+    url: "./route.php?func=verify_phone_",
+    data: formdata,
+    beforeSend: function () {
+      console.log("ready to verify pin")
+    },
+    success: function (response) {
+      console.log(response)
+      $('.response').fadeIn();
+      $('.response').html(response);
+      if(response.index("successful"){
+        window.location = "./vote.php";
 
-  //   },
-  //   success: function (response) {
-  //     console.log(response)
-  //     $('p.box-msg-v').html(response);
-  //     if(response >= 20){
-  //       window.location = "./vote.php";
-
-  //       }
+        }
 
       
-  //   }
-  // });
+    }
+  });
   
 });
 

@@ -13,6 +13,8 @@ include 'db.php';
     if(!empty($phone)){
 
                     $this_phone = mysqli_real_escape_string($con, $phone);
+                    $verify_num =  rand();
+                    $verify_num = substr($verify_num, 4);
                     try {
               
                 $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = $this_phone");
@@ -33,11 +35,9 @@ include 'db.php';
                                     /************* */
                                         //send otp 
                                     /************* */
-                                        $verify_num =  rand();
-                                        $verify_num = substr($verify_num, 4);
-
                                    
-                                         $result = "UPDATE voters set pin = '$verify_num' WHERE  phone ='$this_phone' ";
+                                         $result =  mysqli_query($con, "UPDATE voters SET pin = '".$verify_num."' WHERE  phone = '".$this_phone."' ");
+                             
                                          if(!$result){
                                              throw new Exception( "failed to update pin" .mysqli_error($con));
                                          } else{
@@ -162,36 +162,26 @@ function register(){
 
 
 
-
-
-
-
-
-
             function verify_phone_(){
                 include 'db.php';
                 extract($_POST);
+                $_SESSION['verify'] = false;
 
-                if(isset($verify_num)){
+          
+                if(isset($fourth_box)){
 
-                  $_SESSION['verify'] = false;
+                  $verify_num = $first_box . $second_box . $third_box . $fourth_box;
               
-                  try {
-              $result = mysqli_query($con, "SELECT * FROM voters WHERE pin = $verify_num  ");
-              if(!$result) {  
-              throw new Exception("this phone doesn't exit");
-              } else { 
-              $_SESSION['verify'] = true;
-              throw new Exception(22); 
+               $result = mysqli_query($con, "SELECT * FROM voters WHERE pin = $verify_num  ");
+                if(!$result) {  
+                throw new Exception("this phone doesn't exit");
+                } else { 
+                $_SESSION['verify'] = true;
+                 exit("successful");
               
               }
-              
-              } catch (Exception $th) {
-               echo $th->getMessage();
-              }
-              
-              exit();
-              }  else echo "no phone number sent ";
+
+              }  else echo "no pin number sent ";
               
               }
 

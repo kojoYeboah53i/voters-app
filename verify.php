@@ -62,6 +62,7 @@ header('location: index.html');
                       <h5 style="color: #23c79e;">
                         Enter your verification pin
                       </h5>
+                 <button class="response btn btn-secondary btn-block" style="background-color: #23c79e; display: none;">
 
                       <form class="form-signin verification-form" style="display: inline-flex;">
                         <input class="page-item pin"  id="first-box" type="text" 
@@ -74,7 +75,7 @@ header('location: index.html');
                   
                        
                         </form>
-                        <button class="btn btn-lg btn-primary btn-block verify" type="submit">Verify</button>
+                        <button class="btn btn-primary verify" type="submit">Verify</button>
 
                     </div>
                    
