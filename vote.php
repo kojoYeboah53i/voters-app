@@ -94,21 +94,18 @@ session_start();
               
                     
                     <div class="col-6 col-sm-3 col-md-4 " style="margin-left: 360px; margin-top: -134px;">
-                    <div class="hoverme ">
+                    <div class="hoverme " >
 
                          <div class="card-body" >
-                                    <img src="./image/candidate-3.png" style="z-index: -1;"  width="305" height="245" alt="" srcset="">
-                           
+                          <img src="./image/candidate-3.png" style="z-index: -1;"  width="305" height="245" alt="" srcset="">
+                           <div class="btn  vote btn-block"><h2>vote</h2></div>
                          <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
                             <br><br>
-                                <button type="button"  class="btn btn btn-block vote  " 
-                                 style="  "><h1>#vote</h1></button>
-                                <button type="button"  class="btn btn-lg btn-block team " 
-                                 id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</button>
+                                <button type="button"  class="btn btn btn-block  " 
+                                 id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</div>
                               </div>
                               </div>
-                                </div>
                        
                                 <div class="col-6 col-sm-3 col-md-4  " style="margin-left: 1px; margin-top: -134px;">
                                     <div class="card-body">

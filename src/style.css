@@ -137,7 +137,12 @@ width: 300px;  position: relative; top: -200px; right: -245px;
     
 
   }
-
+  div.btn.vote.btn-block{
+    background:  black; color: white; border: white solid 4px;margin-top:-40px; 
+  }
+  /* button.btn.btn-block.vote h1{
+  background:  black; color: white; border: white solid 4px;margin-top:-40px;
+} */
   .hoverme :hover  {
     background-color: black;
     opacity: 0.5;

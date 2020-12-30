@@ -79,8 +79,9 @@ $('#login').click(function (e) {
     $('.login-box-msg ').fadeIn();
     $('button.login-box-msg ').css('background-color', 'green');
     $('.login-box-msg  h4').html("login successful");
-  }
     send_otp(json.pin, json.phone);
+
+  }
 
 
     }
@@ -89,7 +90,7 @@ $('#login').click(function (e) {
 });
 
 
-alert("this page is under construction come back in a few hours");
+// alert("this page is under construction come back in a few hours");
 
 $('#register-user').click(function (e) { 
   e.preventDefault(); 
@@ -256,6 +257,16 @@ $('.vote').click(function (e) {
   });
 });
 
+
+
+$('.hoverme').hover(function () {
+  $('button.btn:nth-child(5) > h1:nth-child(1)').show();
+    
+  }, function () {
+    $('button.btn:nth-child(5) > h1:nth-child(1)').hide();
+    // out
+  }
+);
 $('#logout').click(function (e) { 
   e.preventDefault();
   alert(logout);
