@@ -54,15 +54,25 @@ header('location: index.html');
             </div>
         </div>
         <div class="container app-engine">
+          <center> 
                 <div class="row">
-                  <div class="col-md-4" style="margin-top:20px; height: 300px;">
-                      </div>
-                  <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 100px;">
-                    <div class="container">
-                      <h5 style="color: #23c79e;">
+                <div class="col-md-4" style="margin-top:20px; height:300px;">
+                </div>
+                  <div class="col-6 col-md-4" style="margin-top: 100px;">
+
+                  <div class="verify_box" id="verify" tabindex="-1" role="dialog" style="background-color: #ffff;  box-shadow: 0 2px 10px 1px rgba(0,0,0,.3);">
+       
+                  <div class="response btn btn-secondary btn-block" style="background-color: #23c79e; display: none;"> <h4></h4></div>
+ 
+                  <form id="login-form" enctype="multipart/form-data"  style="outline: none;">
+                  <h4 style="color: #23c79e;" >
                         Enter your verification pin
-                      </h5>
-                 <button class="response btn btn-secondary btn-block" style="background-color: #23c79e; display: none;">
+                      </h4>
+  
+                  <div class="container">
+                    <br> 
+                 
+                  
 
                       <form class="form-signin verification-form" style="display: inline-flex;">
                         <input class="page-item pin"  id="first-box" type="text" 
@@ -75,12 +85,32 @@ header('location: index.html');
                   
                        
                         </form>
-                        <button class="btn btn-primary verify" type="submit">Verify</button>
+
 
                     </div>
+                    <div class="modal-footer" style=" color: white; ">
+                  <div class="col-sm">
+                    <button type="submit" class="btn btn-info verify-1" >Verify</button>
+                  </div>
+                </div>
+          </form>
+          
+            
+          </div>
+          </div>
+          </div>
+
+
+
+          </center>
+
+
+
+
+
+    
                    
 
-                    </div>
                         
 
                     <div class="modal fade" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
@@ -129,7 +159,6 @@ header('location: index.html');
 
 
 
-    </div>
 
     <footer class="footer" style="visibility: hidden;">
         <div class="container">

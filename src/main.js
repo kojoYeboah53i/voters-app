@@ -12,16 +12,16 @@ $(function () {
 /************* */
 
 $('#first-box').keypress(function (e) { 
-  console.log($('#first-box').val());
+  // console.log($('#first-box').val());
   $('#second-box').focus();
 });
 
 $('#fourth-box').keypress(function (e) { 
-  console.log($('#fourth-box').val());
+  // console.log($('#fourth-box').val());
   $('#first-box').focus();
 });
 $('#second-box').keypress(function (e) { 
-  console.log($('#second-box').val());
+  // console.log($('#second-box').val());
   $('#third-box').focus();
   
 });
@@ -189,7 +189,7 @@ $('.this_old_user').click(function (e) {
   
 });
 
-$('.verify').click(function (e) { 
+$('.verify-1').click(function (e) { 
   e.preventDefault();
   // let verify_num = $('#pin').val();
   var formdata = {
@@ -211,9 +211,9 @@ $('.verify').click(function (e) {
     success: function (response) {
       console.log(response)
       $('.response').fadeIn();
-      $('.response').html(response);
-      if(response.index("successful"){
-        window.location = "./vote.php";
+      $('.response h4').html(response);
+      if(response.indexOf("successful")){
+        // window.location = "./vote.php";
 
         }
 
