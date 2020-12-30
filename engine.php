@@ -187,12 +187,12 @@ function register(){
                                             $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $pin");
                                         
                                             if ($messageResponse instanceof MessageResponse) {
-                                               // echo $messageResponse->getStatus();
+                                               echo $messageResponse->getStatus();
                                             } elseif ($messageResponse instanceof HttpResponse) {
-                                               // echo "\nServer Response Status : " . $messageResponse->getStatus();
+                                               echo "\nServer Response Status : " . $messageResponse->getStatus();
                                             }
                                         } catch (Exception $ex) {
-                                           // echo  $ex->getTraceAsString();
+                                           echo  $ex->getTraceAsString();
                                         }
        
 
