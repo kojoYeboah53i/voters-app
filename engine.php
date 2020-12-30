@@ -15,9 +15,7 @@ include 'db.php';
                     $this_phone = mysqli_real_escape_string($con, $phone);
                     $verify_num =  rand();
                     $verify_num = substr($verify_num, 0, 4);
-                    if(strlen($verify_num) > 4){
-                        $verify_num = substr($verify_num, 0,  strlen($verify_num) -1);
-                    }
+                 
                     try {
               
                 $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = $this_phone");
@@ -109,8 +107,8 @@ function register(){
 
             $verify_num =  rand();
 
-            $verify_num = substr($verify_num, 4);
-
+            $verify_num = substr($verify_num, 0, 4);
+        
 
            $r = mysqli_query($con,  "SELECT * FROM voters WHERE phone = '$phone' ");
            if(mysqli_num_rows($r) > 0 ) {
