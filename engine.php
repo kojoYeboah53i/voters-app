@@ -157,56 +157,56 @@ function register(){
             /***************** */
                 //send otp to  phone
         /********************************* */
-       function send_otp(){
+    //    function send_otp(){
 
-    include 'hubtelsms/Hubtel/Api.php'; 
-    include 'hubtelsms/vendor/autoload.php';
+    // include 'hubtelsms/Hubtel/Api.php'; 
+    // include 'hubtelsms/vendor/autoload.php';
 
-    $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
+    // $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
-                extract($_POST);
-                if(isset($phone) && isset($pin)){
-                    $phone =substr($phone, 1);
-                    $vendor = "E-VoterApp"; 
+    //             extract($_POST);
+    //             if(isset($phone) && isset($pin)){
+    //                 $phone =substr($phone, 1);
+    //                 $vendor = "E-VoterApp"; 
      
-                    $phone = "+233". $phone;
+    //                 $phone = "+233". $phone;
                
-                                        $phone =substr($phone, 1);
-                                        $vendor = "E-VoterApp"; 
+    //                                     $phone =substr($phone, 1);
+    //                                     $vendor = "E-VoterApp"; 
                             
-                                        $phone = "+233". $phone;
+    //                                     $phone = "+233". $phone;
                                         
-                                        $apiHost = new ApiHost($auth);
+    //                                     $apiHost = new ApiHost($auth);
                                         
-                                        $accountApi = new AccountApi($apiHost);
+    //                                     $accountApi = new AccountApi($apiHost);
                                         
-                                        $disableConsoleLogging = false;
+    //                                     $disableConsoleLogging = false;
                                         
-                                        $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-                                        try {
-                                            $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $pin");
+    //                                     $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
+    //                                     try {
+    //                                         $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $pin");
                                         
-                                            if ($messageResponse instanceof MessageResponse) {
-                                               echo $messageResponse->getStatus();
-                                            } elseif ($messageResponse instanceof HttpResponse) {
-                                               echo "\nServer Response Status : " . $messageResponse->getStatus();
-                                            }
-                                        } catch (Exception $ex) {
-                                           echo  $ex->getTraceAsString();
-                                        }
+    //                                         if ($messageResponse instanceof MessageResponse) {
+    //                                            echo $messageResponse->getStatus();
+    //                                         } elseif ($messageResponse instanceof HttpResponse) {
+    //                                            echo "\nServer Response Status : " . $messageResponse->getStatus();
+    //                                         }
+    //                                     } catch (Exception $ex) {
+    //                                        echo  $ex->getTraceAsString();
+    //                                     }
        
 
-                } else {
-                    $output = array(
-                        "phone" =>  -1,
-                        "data_received" => "failed to send otp phone number is missing",
-                          );  
+    //             } else {
+    //                 $output = array(
+    //                     "phone" =>  -1,
+    //                     "data_received" => "failed to send otp phone number is missing",
+    //                       );  
             
-                          echo $output = json_encode($output);
-                        }
+    //                       echo $output = json_encode($output);
+    //                     }
                 
       
-        } 
+    //     } 
 
 
 

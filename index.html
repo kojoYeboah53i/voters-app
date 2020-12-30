@@ -43,122 +43,108 @@
             </div>
         </div>
         <div class="container app-engine">
-                <div class="row">
-                  <div class="col-md-4" style="margin-top:20px; height: 300px;">
-                      </div>
-                  <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 100px;">
-                    <div class="container">
-                      <h4 style="color: #23c79e;">
-                        Login to vote for your candidate
-                      </h4>
-                      <br>
-                      <div class="col-sm">
-                        <button type="submit" class="btn btn-danger btn-block "data-toggle="modal" data-target="#login_">Login</button>
-                        <button type="submit" class="btn btn-info btn-block" data-toggle="modal" data-target="#register_">Register</button>
-                      </div>
-                    </div>
-                   
+          
+          <div class="form" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" style=" color: white; background-color: #23c79e;">
+                  <h4 class="modal-title" id="myModalLabel"></h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="background-color:   #0d0e0f;">
+                  <h3 class="result" style="color: white"><span >LOGIN</span></h3>
+                 <h4> <p class="login-box-msg" align="center" style="color: white"></p></h4>
+                  <form id="login-form" enctype="multipart/form-data">
+          
+  
+          
+                    <div class="login-box-body">
 
-                    </div>
+                        <!-- </div> -->
+                        <div class="form-group">
+                            <label for="name" style=" color: white;">Enter your name</label>
+                            <input type="text" class="form-control " id="user" name="user"
+                                placeholder="name" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="phone" style=" color: white;">Enter your phone number</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
                         
-
-                    <div class="modal fade" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header" style=" color: white; background-color: #23c79e;">
-                              <h4 class="modal-title" id="myModalLabel"></h4>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" style="background-color:   #0d0e0f;">
-                              <h3 class="result" style="color: white"><span >LOGIN</span></h3>
-                             <h4> <p class="login-box-msg" align="center" style="color: white"></p></h4>
-                              <form id="login-form" enctype="multipart/form-data">
-                      
-              
-                      
-                                <div class="login-box-body">
-	
-                                    <!-- </div> -->
-                                    <div class="form-group">
-                                        <label for="name" style=" color: white;">Enter your name</label>
-                                        <input type="text" class="form-control " id="user" name="user"
-                                            placeholder="name" >
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="phone" style=" color: white;">Enter your phone number</label>
-                                        <input type="text" class="form-control" id="phone" name="phone">
-                                    </div>
-                                    
-                                    </div>
-                      
-                      </form>
-                      
-                            </div>
-                            <div class="modal-footer" style=" color: white; background-color: #23c79e;">
-                              <button type="button" id="login" class="btn btn-primary " style=" color: white; background: black">Submit</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
+          
+          </form>
+          
+                </div>
+                <div class="modal-footer" style=" color: white; background-color: #23c79e;">
+                  <div class="col-sm">
+                    <button type="submit"  id="login" class="btn btn-secondary">Login</button>
+                    <button type="submit" class="btn btn-info " data-toggle="modal" data-target="#register_">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-                      <div class="modal fade" id="register_" tabindex="-1" role="dialog" aria-labelledby="register_" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header" style=" color: white; background-color: #23c79e;">
-                              <h4 class="modal-title" id="myModalLabel"></h4>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" style="background-color:   #0d0e0f;">
-                              <h3 class="result" style="color: white"><span >Register</span></h3>
-                             <button class="msg-board-r btn btn-secondary btn-block" style="background-color: #23c79e; display: none;">
+          <div class="modal fade" id="register_" tabindex="-1" role="dialog" aria-labelledby="register_" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" style=" color: white; background-color: #23c79e;">
+                  <h4 class="modal-title" id="myModalLabel"></h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="background-color:   #0d0e0f;">
+                  <h3 class="result" style="color: white"><span >Register</span></h3>
+                 <button class="msg-board-r btn btn-secondary btn-block" style="background-color: #23c79e; display: none;">
 
-                             <p class=".msg-board-r" align="center" style="color: white"> <h4></h4> </p>
+                 <p class=".msg-board-r" align="center" style="color: white"> <h4></h4> </p>
 
-                             </button>
-                              <form id="register-form" enctype="multipart/form-data">
-                      
-              
-                      
-                                <div class="login-box-body">
-	
-                                    <!-- </div> -->
-                                    <div class="form-group">
-                                        <label for="name" style=" color: white;">Enter your name</label>
-                                        <input type="text" class="form-control " id="name1" name="user"
-                                            placeholder="name" >
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="phone" style=" color: white;">Enter your phone number</label>
-                                        <input type="text" class="form-control" id="phone1" name="phone">
-                                    </div>
-                                    
-                                    </div>
-                      
-                      </form>
-                      
-                            </div>
-                            <div class="modal-footer" style=" color: white; background-color: #23c79e;">
-                              <button type="button" id="register-user" class="btn btn-primary " style=" color: white; background: black">Register</button>
-                            </div>
-                          </div>
+                 </button>
+                  <form id="register-form" enctype="multipart/form-data">
+          
+  
+          
+                    <div class="login-box-body">
+
+                        <!-- </div> -->
+                        <div class="form-group">
+                            <label for="name" style=" color: white;">Enter your name</label>
+                            <input type="text" class="form-control " id="name1" name="user"
+                                placeholder="name" >
                         </div>
-                      </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="phone" style=" color: white;">Enter your phone number</label>
+                            <input type="text" class="form-control" id="phone1" name="phone">
+                        </div>
+                        
+                        </div>
+          
+          </form>
+          
+                </div>
+                <div class="modal-footer" style=" color: white; background-color: #23c79e;">
+                  <button type="button" id="register-user" class="btn btn-primary " style=" color: white; background: black">Register</button>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+
+          <div class="container" style="position: relative; bottom: 0; width: 100%; margin-top: 100px;">
+            <span class="text-muted"> <h2>E-Voter, made by Real Studios LLC</h2></span>
+          </div>
 
 
-    </div>
-
-    <footer class="footer" style="visibility: hidden;">
-        <div class="container">
-          <span class="text-muted"> created by yours truly, Isaac Yeboah</span>
-        </div>
-      </footer> 
+    <div class="footer" style="height: 300px;; visibility: hidden;">
+ 
+      </div> 
 
       <script src="./src/jquery.js"></script>
       <script src="./src/bootstrap.js"></script>
