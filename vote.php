@@ -172,7 +172,9 @@ session_start();
  
 
     </div>
+<div class="col-sm" style="height: 400px;">
 
+</div>
  
 
       <script src="./src/jquery.js"></script>

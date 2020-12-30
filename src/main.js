@@ -1,6 +1,10 @@
 $(function () {
+
+  //console.log("main script file is working");
  
 });
+
+
 
 
 /************* */
@@ -130,6 +134,8 @@ $('#register-user').click(function (e) {
           $('.msg-board-r').fadeIn();
           $('button.msg-board-r').css('background-color', 'green');
           $('.msg-board-r h4').html(" Registration successful..!");
+          console.log("verify pin" + json.pin)
+          console.log("phone" + json.phone)
           send_otp(json.pin, json.phone);
     
         } 
@@ -154,7 +160,6 @@ function send_otp(pin, phone_){
     $.ajax({
       type: "POST",
       url: "./route.php?func=send_otp",
-      dataType: "html",        
       data: FormData,
       beforeSend: function () {
         console.log("sending otp") },
@@ -164,7 +169,7 @@ function send_otp(pin, phone_){
        }
     });
 
-  }
+  } else console.log("no phone sent");
 
 }
 
