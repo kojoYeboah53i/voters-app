@@ -146,9 +146,10 @@ width: 300px;  position: relative; top: -200px; right: -245px;
   .hoverme :hover button#yaw-team{
     display: none;
   }
-
-  .hoverme :hover button .vote {
-
+/* div.hoverme div.card-body button.btn.btn-block.vote h1 */
+  .hoverme :hover button.btn.btn-block.vote h1{
+    opacity: 1;
+    display: block;
   }
  
   

@@ -103,8 +103,9 @@ session_start();
                             <small class="text-muted">Yaw the leader</small></h4>
                             <br><br>
                                 <button type="button"  class="btn btn btn-block vote  " 
-                                 style=" background:  black; color: white; border: white solid 4px;margin-top:-40px; "><h1>#vote</h1></button>
-                                <button type="button"  class="btn btn-lg btn-block team  "  id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</button>
+                                 style="  "><h1>#vote</h1></button>
+                                <button type="button"  class="btn btn-lg btn-block team " 
+                                 id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</button>
                               </div>
                               </div>
                                 </div>
