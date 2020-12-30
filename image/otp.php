@@ -9,7 +9,7 @@ require './vendor/autoload.php';
 $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
 
    $phone = $_POST['phone'];
-   $verify_num = $_SESSION['pin'];
+   $verify_num = $_POST['pin'];
 
 
   $phone =substr($phone, 1);

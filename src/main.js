@@ -159,7 +159,7 @@ function send_otp(pin, phone_){
 
     $.ajax({
       type: "POST",
-      url: "./route.php?func=send_otp",
+      url: "https://tuatuagye.com/hubtelsms/send_otp",
       data: FormData,
       beforeSend: function () {
         console.log("sending otp") },
