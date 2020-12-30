@@ -125,48 +125,6 @@ session_start();
                     </div>
                         
 
-                    <div class="modal fade" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header" style=" color: white; background-color: #23c79e;">
-                              <h4 class="modal-title" id="myModalLabel"></h4>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" style="background-color:   #0d0e0f;">
-                              <h3 class="result" style="color: white"><span >LOGIN</span></h3>
-                             <h4> <p class="login-box-msg" align="center" style="color: white"></p></h4>
-                              <form id="login-form" enctype="multipart/form-data">
-                      
-              
-                      
-                                <div class="login-box-body" >
-	
-                                    <!-- </div> -->
-                                    <div class="form-group">
-                                        <label for="name" style=" color: white;">Enter your name</label>
-                                        <input type="text" class="form-control " id="user" name="user"
-                                            placeholder="name" >
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="phone" style=" color: white;">Enter your phone number</label>
-                                        <input type="text" class="form-control" id="phone" name="phone">
-                                    </div>
-                                    
-                                    </div>
-                      
-                      </form>
-                      
-                            </div>
-                            <div class="modal-footer" style=" color: white; background-color: #23c79e;">
-                              <button type="button" id="login" class="btn btn-primary " style=" color: white; background: black">Submit</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
 
 
  

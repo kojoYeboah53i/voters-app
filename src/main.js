@@ -189,39 +189,46 @@ $('.this_old_user').click(function (e) {
   
 });
 
-$('.verify-1').click(function (e) { 
-  e.preventDefault();
-  // let verify_num = $('#pin').val();
-  var formdata = {
-    first_box : $('#first-box').val(),
-    second_box : $('#second-box').val(),
-    third_box : $('#third-box').val(),
-    fourth_box : $('#fourth-box').val()
-  }
 
-  console.log(formdata)
+                /***************** *
+                    verify phone
+                /***************** */
 
-  $.ajax({
-    type: "post",
-    url: "./route.php?func=verify_phone_",
-    data: formdata,
-    beforeSend: function () {
-      console.log("ready to verify pin")
-    },
-    success: function (response) {
-      console.log(response)
-      $('.response').fadeIn();
-      $('.response h4').html(response);
-      if(response.indexOf("successful")){
-        // window.location = "./vote.php";
 
-        }
+          $('.verify-1').click(function (e) { 
+            e.preventDefault();
+            // let verify_num = $('#pin').val();
+            var formdata = {
+              first_box : $('#first-box').val(),
+              second_box : $('#second-box').val(),
+              third_box : $('#third-box').val(),
+              fourth_box : $('#fourth-box').val()
+            }
 
-      
-    }
-  });
-  
-});
+            console.log(formdata)
+
+            $.ajax({
+              type: "post",
+              url: "./route.php?func=verify_phone_",
+              data: formdata,
+              beforeSend: function () {
+                console.log("ready to verify pin")
+              },
+              success: function (response) {
+                console.log(response)
+                $('.response').fadeIn();
+                $('.response h4').html(response);
+                 response.replace(/\s+/g, '');
+                if(response.indexOf("successful") > -1){
+                  window.location = "./vote.php";
+
+                  }
+
+                
+              }
+            });
+            
+          });
 
 
 $('.vote').click(function (e) { 
