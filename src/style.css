@@ -147,7 +147,9 @@ width: 300px;  position: relative; top: -200px; right: -245px;
     display: none;
   }
 
-  
+  .hoverme :hover button .vote {
 
+  }
+ 
   
 

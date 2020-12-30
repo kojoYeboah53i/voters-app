@@ -102,9 +102,8 @@ session_start();
                          <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
                             <br><br>
-                    
                                 <button type="button"  class="btn btn btn-block vote  " 
-                                 style=" background:  black; color: white; border: white solid 2px;margin-top:-40px; ">#vote</button>
+                                 style=" background:  black; color: white; border: white solid 4px;margin-top:-40px; "><h1>#vote</h1></button>
                                 <button type="button"  class="btn btn-lg btn-block team  "  id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</button>
                               </div>
                               </div>
@@ -114,10 +113,9 @@ session_start();
                                     <div class="card-body">
                                                <img src="./image/candidate-4.png" width="305" height="245" alt="" srcset="">
                                       
-                                    <h4 class="card-title pricing-card-title"> Efia Mensah <br>
-                                       <small class="text-muted">Efia the leader</small></h4>
-                               
-                                           <button type="button"  class="btn cta  btn-lg btn-block   " id="shop-now"style="background: #FFD700; color: white">Gold Team</button>
+                                <h4 class="card-title pricing-card-title"> Efia Mensah <br>
+                                 <small class="text-muted">Efia the leader</small></h4>
+                               <button type="button"  class="btn cta  btn-lg btn-block   " id="shop-now"style="background: #FFD700; color: white">Gold Team</button>
                                          </div>
                                            </div>
                    
