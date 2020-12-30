@@ -6,6 +6,10 @@ if(!isset($_SESSION['user_in'])){
 header('location: index.html');
 }
 ?>
+<script>
+</script>
+"<?php  echo $_GET['phone']; ?>",
+?>
 
 
 

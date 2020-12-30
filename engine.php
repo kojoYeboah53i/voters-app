@@ -163,19 +163,24 @@ function register(){
 
 
 
+
+                /***************** *
+                    verify phone
+                /***************** */
+
             function verify_phone_(){
                 include 'db.php';
                 extract($_POST);
                 $_SESSION['verify'] = false;
 
           
-                if(isset($fourth_box)){
+                if(!empty($fourth_box)){
 
                   $verify_num = $first_box . $second_box . $third_box . $fourth_box;
               
-               $result = mysqli_query($con, "SELECT * FROM voters WHERE pin = $verify_num  ");
+               $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $phone ");
                 if(!$result) {  
-                throw new Exception("this phone doesn't exit");
+                exit("this phone doesn't exit");
                 } else { 
                 $_SESSION['verify'] = true;
                  exit("successful");
