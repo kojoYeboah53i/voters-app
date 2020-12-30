@@ -14,7 +14,10 @@ include 'db.php';
 
                     $this_phone = mysqli_real_escape_string($con, $phone);
                     $verify_num =  rand();
-                    $verify_num = substr($verify_num, 4);
+                    $verify_num = substr($verify_num, 0, 4);
+                    if(strlen($verify_num) > 4){
+                        $verify_num = substr($verify_num, 0,  strlen($verify_num) -1);
+                    }
                     try {
               
                 $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = $this_phone");
@@ -178,7 +181,6 @@ function register(){
                 } else { 
                 $_SESSION['verify'] = true;
                  exit("successful");
-              
               }
 
               }  else echo "no pin number sent ";
