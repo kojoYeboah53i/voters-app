@@ -44,7 +44,7 @@
         </div>
         <div class="container app-engine">
           
-          <div class="form" id="login_" tabindex="-1" role="dialog" aria-labelledby="login_" aria-hidden="true">
+          <div class="login-old_user" id="login_" tabindex="-1" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header" style=" color: white; background-color: #23c79e;">
@@ -55,7 +55,11 @@
                 </div>
                 <div class="modal-body" style="background-color:   #0d0e0f;">
                   <h3 class="result" style="color: white"><span >LOGIN</span></h3>
-                 <h4> <p class="login-box-msg" align="center" style="color: white"></p></h4>
+                 <button class="login-box-msg btn btn-secondary btn-block" style="background-color: #23c79e; display: none;">
+
+                  <p class="login-box-msg" align="center" style="color: white"> <h4></h4> </p>
+ 
+                  </button>
                   <form id="login-form" enctype="multipart/form-data">
           
   
@@ -82,7 +86,7 @@
                 <div class="modal-footer" style=" color: white; background-color: #23c79e;">
                   <div class="col-sm">
                     <button type="submit"  id="login" class="btn btn-secondary">Login</button>
-                    <button type="submit" class="btn btn-info " data-toggle="modal" data-target="#register_">Register</button>
+                    <button type="submit" class="btn btn-info this_new_user" >Register</button>
                   </div>
                 </div>
               </div>
@@ -90,7 +94,7 @@
           </div>
 
 
-          <div class="modal fade" id="register_" tabindex="-1" role="dialog" aria-labelledby="register_" aria-hidden="true">
+          <div class="new_user" id="register_" style="display: none;">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header" style=" color: white; background-color: #23c79e;">
@@ -131,6 +135,7 @@
                 </div>
                 <div class="modal-footer" style=" color: white; background-color: #23c79e;">
                   <button type="button" id="register-user" class="btn btn-primary " style=" color: white; background: black">Register</button>
+                  <button type="button "  class="btn  this_old_user" style=" color: #23c79e; background: white">Login</button>
                 </div>
               </div>
             </div>

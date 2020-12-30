@@ -1,6 +1,6 @@
 $(function () {
 
-  //console.log("main script file is working");
+  console.log("main script file is working");
  
 });
 
@@ -53,41 +53,40 @@ $('#login').click(function (e) {
 
    console.log(formdata); 
 
-$.ajax({
-  type: "POST",
-   url: "./route.php?func=login_user",
-data: formdata,
+      $.ajax({
+        type: "POST",
+        url: "./route.php?func=login_user",
+        data: formdata,
+        success: function(response, textStatus, jqXHR) {
+          console.log(response);
+    $('.login-box-msg ').fadeIn();
+    $('.login-box-msg h4').html("Loading..!"); 
+  json = $.parseJSON(response);
+   console.log((json.success)); 
+   console.log(json.phone); 
+   if (  json.phone < 1 ){
+    $('.login-box-msg').fadeIn();
+    $('button.login-box-msg').css('background-color', 'red');
+    $('.login-box-msg  h4').html("Phone is not registered");
 
-beforeSend: function(){
-  console.log("user is loggin ");
-
-},
-
-success: function(response, textStatus, jqXHR) {
-   console.log(response);
- 
-   
-    if (    response.indexOf("user_log_in_successful")  > -1 ){
-    $('p.login-box-msg').css('background-color', 'green');
-    $('p.login-box-msg').html(" login successful..!");
-      setTimeout(() => {
-        window.location = "./verify.php";
-        
-      }, 3000);
-  } else{
-    $('p.login-box-msg').css('background-color', 'red');
-    $('p.login-box-msg').html(" phone not found");
   }
+  else if (json.success == "no_phone"){
+    $('.login-box-msg ').fadeIn();
+    $('button.login-box-msg ').css('background-color', 'red');
+    $('.msg-board-r h4').html("Enter a valid phone e.g 024 XXX XXXX");
+  } else  {
+    $('.login-box-msg ').fadeIn();
+    $('button.login-box-msg ').css('background-color', 'green');
+    $('.login-box-msg  h4').html("login successful");
+  }
+    // send_otp(json.pin, json.phone);
 
-}
 
-
+    }
+  });
 
 });
 
-
-
-});
 
 alert("this page is under construction come back in a few hours");
 
@@ -173,6 +172,20 @@ function send_otp(pin, phone_){
 
 }
 
+$('.this_new_user').click(function (e) { 
+  e.preventDefault();
+  $('.login-old_user').hide(700);
+  $('.new_user').fadeIn(2000);
+  
+});
+
+$('.this_old_user').click(function (e) { 
+  e.preventDefault();
+  $('.new_user').hide();
+  $('.login-old_user').fadeIn(2000);
+
+  
+});
 
 $('.verify').click(function (e) { 
   e.preventDefault();

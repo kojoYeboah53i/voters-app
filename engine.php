@@ -23,7 +23,8 @@ include 'db.php';
                     while($row = mysqli_fetch_array($results)){
                         extract($row);
                         if ($phone == $this_phone){
-                             echo "user_log_in_successful"; 
+                      
+              
                              $_SESSION['user_in'] = true;
 
                                     /************* */
@@ -32,14 +33,28 @@ include 'db.php';
                                         $verify_num =  rand();
                                         $verify_num = substr($verify_num, 4);
 
-                                        
-                                         $result = "UPDATE voters set pin = '$verify_num' WHERE  user_id ='$user_id' ";
+                                   
+                                         $result = "UPDATE voters set pin = '$verify_num' WHERE  phone ='$this_phone' ";
                                          if(!$result){
                                              throw new Exception( "failed to update pin" .mysqli_error($con));
+                                         } else{
+                                            $output = array(
+                                                "phone" =>  $this_phone,
+                                                "pin" =>  $verify_num,
+                                                "success" => "yes"
+                                                );
                                          }
+                                         echo $output = json_encode($output);
 
 
-                        } 
+                        } else{
+                            $output = array(
+                                "phone" =>  -1,
+                                "success" => "no"
+                                );
+                                echo $output = json_encode($output);
+ 
+                        }
                     }
                 }
         
@@ -51,7 +66,11 @@ include 'db.php';
      
 
     } else {
-        echo "no phone number sent";
+        $output = array(
+            "phone" =>  -1,
+            "success" => "no phone sent"
+            );
+            echo $output = json_encode($output);
     }
     
 
@@ -70,16 +89,7 @@ function register(){
 
     extract($_POST);
 
-    // if(empty($phone)){
-             
-    //         $output = array(
-    //             "phone" =>  -1,
-    //             "data_received" => "no phone",
-    //              "new_user" => -1
-    //               );             
-    //               echo $output = json_encode($output);
-        
-    // }
+
     
     if(isset($phone)){
 
@@ -151,62 +161,6 @@ function register(){
 
 
 
-
-
-
-            /***************** */
-                //send otp to  phone
-        /********************************* */
-    //    function send_otp(){
-
-    // include 'hubtelsms/Hubtel/Api.php'; 
-    // include 'hubtelsms/vendor/autoload.php';
-
-    // $auth = new BasicAuth("ulxdpkdj", "hbowjbzh");
-
-    //             extract($_POST);
-    //             if(isset($phone) && isset($pin)){
-    //                 $phone =substr($phone, 1);
-    //                 $vendor = "E-VoterApp"; 
-     
-    //                 $phone = "+233". $phone;
-               
-    //                                     $phone =substr($phone, 1);
-    //                                     $vendor = "E-VoterApp"; 
-                            
-    //                                     $phone = "+233". $phone;
-                                        
-    //                                     $apiHost = new ApiHost($auth);
-                                        
-    //                                     $accountApi = new AccountApi($apiHost);
-                                        
-    //                                     $disableConsoleLogging = false;
-                                        
-    //                                     $messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
-    //                                     try {
-    //                                         $messageResponse = $messagingApi->sendQuickMessage("$vendor", "$phone", " Verification Pin \n $pin");
-                                        
-    //                                         if ($messageResponse instanceof MessageResponse) {
-    //                                            echo $messageResponse->getStatus();
-    //                                         } elseif ($messageResponse instanceof HttpResponse) {
-    //                                            echo "\nServer Response Status : " . $messageResponse->getStatus();
-    //                                         }
-    //                                     } catch (Exception $ex) {
-    //                                        echo  $ex->getTraceAsString();
-    //                                     }
-       
-
-    //             } else {
-    //                 $output = array(
-    //                     "phone" =>  -1,
-    //                     "data_received" => "failed to send otp phone number is missing",
-    //                       );  
-            
-    //                       echo $output = json_encode($output);
-    //                     }
-                
-      
-    //     } 
 
 
 
