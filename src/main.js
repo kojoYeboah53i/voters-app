@@ -64,22 +64,23 @@ $('#login').click(function (e) {
   json = $.parseJSON(response);
    console.log((json.success)); 
    console.log(json.phone); 
-   if (  json.phone < 1 ){
+   if (json.success == "no_phone"){
     $('.login-box-msg').fadeIn();
     $('button.login-box-msg').css('background-color', 'red');
-    $('.login-box-msg  h4').html("Phone is not registered");
+    $('.login-box-msg h4').html("Enter a valid phone e.g 024 XXX XXXX");
 
   }
-  else if (json.success == "no_phone"){
+  else if (  json.phone < 1 ){
     $('.login-box-msg ').fadeIn();
     $('button.login-box-msg ').css('background-color', 'red');
-    $('.msg-board-r h4').html("Enter a valid phone e.g 024 XXX XXXX");
+    $('.login-box-msg  h4').html("Phone is not registered");
+
   } else  {
     $('.login-box-msg ').fadeIn();
     $('button.login-box-msg ').css('background-color', 'green');
     $('.login-box-msg  h4').html("login successful");
   }
-    // send_otp(json.pin, json.phone);
+    send_otp(json.pin, json.phone);
 
 
     }

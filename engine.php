@@ -15,18 +15,21 @@ include 'db.php';
                     $this_phone = mysqli_real_escape_string($con, $phone);
                     try {
               
-                $results = mysqli_query($con, "SELECT * FROM  voters ");
-                if(!$results){
-                 throw new Exception( " query wrong check syntax". mysqli_error($con));
+                $results = mysqli_query($con, "SELECT * FROM  voters WHERE phone = $this_phone");
+                if(!mysqli_num_rows( $results)){
+                    $output = array(
+                        "phone" =>  -1,
+                        "success" => "not registered"
+                        );
+                 
+                 echo $output = json_encode($output);
+            
                 } else{
                    
                     while($row = mysqli_fetch_array($results)){
                         extract($row);
                         if ($phone == $this_phone){
-                      
-              
                              $_SESSION['user_in'] = true;
-
                                     /************* */
                                         //send otp 
                                     /************* */
@@ -67,8 +70,8 @@ include 'db.php';
 
     } else {
         $output = array(
-            "phone" =>  -1,
-            "success" => "no phone sent"
+            "phone" =>  -4,
+            "success" => "no_phone"
             );
             echo $output = json_encode($output);
     }
