@@ -165,7 +165,7 @@ function send_otp(pin, phone_){
         console.log("sending otp") },
        success: function (response) {
          console.log(response); 
-         window.location = './verify.php?phone '+phone_+'';
+         window.location = './verify.php?this_phone='+phone_+'';
 
        }
     });
@@ -193,7 +193,6 @@ $('.verify-1').click(function (e) {
   e.preventDefault();
   // let verify_num = $('#pin').val();
   var formdata = {
-    phone : php_phone,
     first_box : $('#first-box').val(),
     second_box : $('#second-box').val(),
     third_box : $('#third-box').val(),

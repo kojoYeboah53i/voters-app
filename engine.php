@@ -173,17 +173,23 @@ function register(){
                 extract($_POST);
                 $_SESSION['verify'] = false;
 
+                $this_phone = $_SESSION['phone'];
           
                 if(!empty($fourth_box)){
 
                   $verify_num = $first_box . $second_box . $third_box . $fourth_box;
               
-               $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $phone ");
+               $result = mysqli_query($con, "SELECT * FROM voters WHERE phone = $this_phone ");
                 if(!$result) {  
                 exit("this phone doesn't exit");
                 } else { 
-                $_SESSION['verify'] = true;
-                 exit("successful");
+                    while($r = mysqli_fetch_array($result)){
+                        if($verify_num == $r['pin']){
+                        $_SESSION['verify'] = true;
+                        exit("successful");
+                    } exit( "wrong pin, not found..!");
+                    }
+     
               }
 
               }  else echo "no pin number sent ";
