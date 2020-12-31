@@ -248,36 +248,7 @@ width: 25%;
       height: 380px;
       color:red;
       /* background-color: white; */
-  }
-
-
-    @media only screen and (max-width: 420px) {
-      .banner{
-        height: 400px;
-        color:yellow;
-        background-color: olive;
     }
-      .core-members, .election-result{
-
-        font-size: 1.2rem;
-
-      }
-
-      .election-result{
-        width: 200px;
-
-
-      }
-      .navigate {
-
-        display: block;
-        float: none;
-        width: 100%;
-        margin-top: -27%;
-        height: 140px;
-        margin-top: 10px;
-
-        }
 
       .top-candidate, .bottom-candidate, .bottom-candidate-2{
       float: none;
@@ -290,7 +261,7 @@ width: 25%;
 
 
 
-
+  }
 
 
   /* div.btn.vote.btn-block{
