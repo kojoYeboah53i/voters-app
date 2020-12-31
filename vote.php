@@ -49,12 +49,20 @@ session_start();
                     <p><h2>CCHN - Winneba</h2></p>
       <p class="lead">College of Community Health Nursing <br> 
                 2020/21 Acadamic Year of Elections</p>
-                    <div class="container result-buttons">
-                        <div class="row">
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary core-members status ">Core Members</div></div>
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary election-resul status">Results</div></div>
+
+                <div class="col-md-12">
+                        <div class="button-wrapper btn-container-left">
+                            <a class="btn btn-lg btn-secondary" href="#">Core Members<span class="glyphicon glyphicon-hand-left"></span></a>
+                            <a class="btn btn-lg btn-secondary" href="#"> Result<span class="glyphicon glyphicon-hand-left"></span></a>
                         </div>
                     </div>
+
+                    <!-- <div class="container-fluid result-buttons">
+                        <div class="row  navigate">
+                        <div class="col-6 col-md-4"> <div class="btn btn-secondary core-members status ">Core Members</div></div>
+                        <div class="col-6 col-md-4"> <div class="btn btn-secondary election-result status">Results</div></div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -71,7 +79,7 @@ session_start();
                         <div class="col-sm"> <div class="btn btn-block status" id="cor-sec"><h3>Cordinating Secretary</h3></div></div>
                     </div>
                     <br>
-                    <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px; ">
+                    <div class="col-6 col-sm-3 col-md-4  top-candidate" style="margin-top: 10px; ">
                         <div class="card-body">
                  <img src="./image/candidate-1.png" width="305" height="245" alt="" srcset="" >
                    
@@ -81,7 +89,7 @@ session_start();
                         <button type="button"  class="btn cta  btn-lg btn-block   " id="Adjoa"style="background: blue; color: white">Blue team</button>
                       </div>
                         </div>
-                        <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px; ">
+                        <div class="col-6 col-sm-3 col-md-4  top-candidate" style="margin-top: 10px; ">
                             <div class="card-body">
                                 <img src="./image/candidate-2.png" width="305" height="245" alt="" srcset="">
                        
@@ -93,21 +101,21 @@ session_start();
                             </div>
               
                     
-                    <div class="col-6 col-sm-3 col-md-4 " style="margin-left: 360px; margin-top: -134px;">
+                    <div class="col-6 col-sm-3 col-md-4  bottom-candidate" style="margin-left: 360px; margin-top: -134px;">
                     <div class="hoverme " >
 
                          <div class="card-body" >
                           <img src="./image/candidate-3.png" style="z-index: -1;"  width="305" height="245" alt="" srcset="">
-                           <div class="btn  vote btn-block"><h2>vote</h2></div>
                          <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
-                            <br><br>
+                            <div class="btn  vote btn-block"style="position: relative;top:47px;background:  black; color: white; border: white solid 4px;margin-top:-40px; "><h2>vote</h2></div>
+ 
                                 <button type="button"  class="btn btn btn-block  " 
                                  id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</div>
                               </div>
                               </div>
                        
-                                <div class="col-6 col-sm-3 col-md-4  " style="margin-left: 1px; margin-top: -134px;">
+                                <div class="col-6 col-sm-3 col-md-4  bottom-candidate-2" style="margin-left: 1px; margin-top: -134px;">
                                     <div class="card-body">
                                                <img src="./image/candidate-4.png" width="305" height="245" alt="" srcset="">
                                       

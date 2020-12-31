@@ -12,14 +12,36 @@ body{
 .inner-banner{
     width: 100%;
     color: white;
+
 }
+
+.button-wrapper .btn {
+	margin: 20px 0px;
+}
+.button-wrapper {
+	display: flex;
+    flex-flow: column wrap;
+	justify-content: space-around;
+}
+a.btn>span.glyphicon {
+	margin-left: 12px;
+}
+
+
+
 .result-buttons{
     margin-top: 70px;
 }
+
 .election-result{
     background: lightblue;
   
     border-radius: 7px;
+      width: 200px;
+      margin: 20px;
+      position: absolute;
+      left: 43%;
+
 
 }
 
@@ -84,6 +106,14 @@ width: 300px;  position: relative; top: -200px; right: -245px;
 .verify{
   background-color: #23c79e;
 }
+.navigate{
+
+  width: 25%;
+  display: inline-flex;
+
+}
+
+
 
 #first-box{
   border : 1px solid #23c79e;
@@ -125,7 +155,29 @@ width: 300px;  position: relative; top: -200px; right: -245px;
     line-height: 60px;
     background-color: #f5f5f5;
   }
-  
+  .top-candidate{
+
+    background-color: gray;
+    float: left;
+width: 25%;
+  }
+
+
+  .bottom-candidate{
+background-color: indianred;
+float: left;
+width: 25%;
+  }
+
+  .bottom-candidate-2{
+
+    background-color: skyblue;
+    float: left;
+    width: 25%;
+
+    }
+
+    
   .hoverme > div:nth-child(1) > img:nth-child(1){
     z-index: -100;
   }
@@ -134,16 +186,120 @@ width: 300px;  position: relative; top: -200px; right: -245px;
     background-color: white;
     z-index: 2;
     position: relative;
+    height: 500px;
     
 
   }
-  div.btn.vote.btn-block{
-    background:  black; color: white; border: white solid 4px;margin-top:-40px; 
+
+  
+  @media only screen and (max-width: 765px) {
+
+    .navigate{
+      float: none;
+      width: 100%;
+      margin-top: -7%;
+
+    }
   }
+
+  @media (min-width: 520px) {
+
+
+
+  	.button-wrapper {
+		align-items: center;
+    	flex-flow: row wrap;
+    	-ms-flex-flow: row wrap;
+    	-webkit-flex-flow: row wrap;
+    }
+    .btn-container-left>a.btn {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    .btn-container-left {
+      justify-content: flex-start;
+    }
+    .btn-container-left>a.btn:first-of-type {
+      margin-left: 0;
+    }
+    .btn-container-left>a.btn:last-of-type {
+      margin-right: 0;
+    }
+
+  }
+  
+  @media only screen and (max-width: 965px) {
+    .banner{
+    background-color: violet;
+
+  }
+}
+
+  @media only screen and (max-width: 765px) {
+    .banner{
+      height: 280px;
+      color:red;
+    background-color: black; 
+    /* background-color: white; */
+  }
+
+  @media only screen and (max-width: 520px) {
+    .banner{
+      height: 380px;
+      color:red;
+      /* background-color: white; */
+  }
+
+
+    @media only screen and (max-width: 420px) {
+      .banner{
+        height: 400px;
+        color:yellow;
+        background-color: olive;
+    }
+      .core-members, .election-result{
+
+        font-size: 1.2rem;
+
+      }
+
+      .election-result{
+        width: 200px;
+
+
+      }
+      .navigate {
+
+        display: block;
+        float: none;
+        width: 100%;
+        margin-top: -27%;
+        height: 140px;
+        margin-top: 10px;
+
+        }
+
+      .top-candidate, .bottom-candidate, .bottom-candidate-2{
+      float: none;
+      width: 100%;
+      display: none;
+
+      }
+
+    }
+
+
+
+
+
+
+  /* div.btn.vote.btn-block{
+    
+  } */
   /* button.btn.btn-block.vote h1{
   background:  black; color: white; border: white solid 4px;margin-top:-40px;
 } */
-  .hoverme :hover  {
+  /* .hoverme :hover  {
     background-color: black;
     opacity: 0.5;
 
@@ -152,10 +308,11 @@ width: 300px;  position: relative; top: -200px; right: -245px;
     display: none;
   }
 /* div.hoverme div.card-body button.btn.btn-block.vote h1 */
+/*
   .hoverme :hover button.btn.btn-block.vote h1{
     opacity: 1;
     display: block;
   }
  
-  
+   */
 

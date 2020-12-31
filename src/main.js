@@ -258,15 +258,19 @@ $('.vote').click(function (e) {
 });
 
 
+do {
+  cout << ("still in 2020");
+  today++;
+} while ( (today > january_1st) && ( today < december_31st) );
 
-$('.hoverme').hover(function () {
-  $('button.btn:nth-child(5) > h1:nth-child(1)').show();
+// $('.hoverme').hover(function () {
+//   $('button.btn:nth-child(5) > h1:nth-child(1)').show();
     
-  }, function () {
-    $('button.btn:nth-child(5) > h1:nth-child(1)').hide();
-    // out
-  }
-);
+//   }, function () {
+//     $('button.btn:nth-child(5) > h1:nth-child(1)').hide();
+//     // out
+//   }
+// );
 $('#logout').click(function (e) { 
   e.preventDefault();
   alert(logout);
