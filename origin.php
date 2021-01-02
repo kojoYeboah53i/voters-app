@@ -63,6 +63,18 @@ session_start();
         </div>
       <div class="containter-fluid origin">
 
+        <div class="row">
+        <div class ="COL-XS-12 COL-SM-4 this-candidate">
+
+
+
+        </div>
+        <div class="COL-XS-12 COL-SM-8 this-team">
+
+
+
+        </div>
+        </div>
 
 
 
@@ -72,7 +84,6 @@ session_start();
 
 
 
-      
       </div>        
 
 
