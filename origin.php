@@ -64,25 +64,118 @@ session_start();
       <div class="containter-fluid origin">
 
         <div class="row">
-        <div class ="COL-XS-12 COL-SM-4 this-candidate">
+        <div class="col-md-4" style="margin-top:20px;">
+                        <div class="col-sm"> <div class="btn btn-block status" id="president"><h4>President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h4>Vice President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="por"><h4>Public Relations</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Organizer</h4></div></div>
+                    </div>
+                    <br>
 
 
+        <div class="col-6 col-sm-3 col-md-4 "style="margin-top: 10px;">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-body">
+            <img src="./image/candidate-1.png" width="255" height="215" alt="" srcset="" >
+                   
+                   <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                      <small class="text-muted">Adjoa the leader</small></h4>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+   
+        </div>
+        <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;">
+
+            <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                        <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >
+                    
+                    <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                        <small class="text-muted">Adjoa the leader</small></h4>
+                <button type="button" class="btn btn-lg btn-block btn-outline-dark">vote</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary" style="background: blue; color: white">Blue Team</button>
+            </div>
+            </div>
 
         </div>
-        <div class="COL-XS-12 COL-SM-8 this-team">
+
+        <br>
+             <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 320px; margin-top: -44px;">
+
+            <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                        <img src="./image/candidate-3.png" width="255" height="215" alt="" srcset="" >
+                    
+                    <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                        <small class="text-muted">Adjoa the leader</small></h4>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+            </div>
+            </div>
+
+            </div>
+            <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 650px; margin-top: -394px;">
+
+                <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                            <img src="./image/candidate-4.png" width="255" height="215" alt="" srcset="" >
+                        
+                        <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                            <small class="text-muted">Adjoa the leader</small></h4>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                </div>
+                </div>
+
+                </div>
 
 
 
-        </div>
-        </div>
 
 
 
 
+            <style>
+                  .this-candidate, .this-team{
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #aaa;
+                    margin: 20px 0;
+                    padding: 10px;
+                    width: 100%;
+                    border: 2px #ccc solid;
+
+                    }
 
 
+                    @media (min-width: 768px) {
+                    html {
+                        font-size: 16px;
+                    }
+                    }
 
+                    .container {
+                    max-width: 960px;
+                    }
 
+                    .board-header {
+                    max-width: 700px;
+                    }
+
+                    .card-deck .card {
+                    min-width: 220px;
+                    }
+
+                    .border-top { border-top: 1px solid #e5e5e5; }
+                    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+                    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+                                </style>
 
       </div>        
 

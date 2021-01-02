@@ -157,20 +157,11 @@ width: 300px;  position: relative; top: -200px; right: -245px;
 
     background-color: gray;
     float: left;
-width: 25%;
+    width: 25%;
   }
 
 
-  .this-candidate, .this-team{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #aaa;
-    margin: 20px 0;
-    padding: 10px;
-    width: 100%;
-      }
-
+ 
 
     
   .hoverme > div:nth-child(1) > img:nth-child(1){
