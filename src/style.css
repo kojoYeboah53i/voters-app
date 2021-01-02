@@ -99,9 +99,7 @@ width: 300px;  position: relative; top: -200px; right: -245px;
 
     opacity: .5;
   }
-/* .cta {
-    display : none;
-} */
+
 
 .verify{
   background-color: #23c79e;
@@ -192,19 +190,7 @@ width: 25%;
   }
 
   
-  @media only screen and (max-width: 765px) {
-
-    .navigate{
-      float: none;
-      width: 100%;
-      margin-top: -7%;
-
-    }
-  }
-
   @media (min-width: 520px) {
-
-
 
   	.button-wrapper {
 		align-items: center;
@@ -228,26 +214,25 @@ width: 25%;
 
   }
   
-  @media only screen and (max-width: 965px) {
-    .banner{
-    background-color: violet;
 
-  }
-}
+    @media only screen and (max-width: 965px) {
+   
+      /* .banner{
+
+        } */
+
+          
+
+    }
 
   @media only screen and (max-width: 765px) {
     .banner{
       height: 280px;
-      color:red;
-    background-color: black; 
-    /* background-color: white; */
   }
 
   @media only screen and (max-width: 520px) {
     .banner{
       height: 380px;
-      color:red;
-      /* background-color: white; */
     }
 
       .top-candidate, .bottom-candidate, .bottom-candidate-2{
@@ -264,26 +249,4 @@ width: 25%;
   }
 
 
-  /* div.btn.vote.btn-block{
-    
-  } */
-  /* button.btn.btn-block.vote h1{
-  background:  black; color: white; border: white solid 4px;margin-top:-40px;
-} */
-  /* .hoverme :hover  {
-    background-color: black;
-    opacity: 0.5;
-
-  }
-  .hoverme :hover button#yaw-team{
-    display: none;
-  }
-/* div.hoverme div.card-body button.btn.btn-block.vote h1 */
-/*
-  .hoverme :hover button.btn.btn-block.vote h1{
-    opacity: 1;
-    display: block;
-  }
- 
-   */
-
+  

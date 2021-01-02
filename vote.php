@@ -52,17 +52,12 @@ session_start();
 
                 <div class="col-md-12">
                         <div class="button-wrapper btn-container-left">
-                            <a class="btn btn-lg btn-secondary" href="#">Core Members<span class="glyphicon glyphicon-hand-left"></span></a>
-                            <a class="btn btn-lg btn-secondary" href="#"> Result<span class="glyphicon glyphicon-hand-left"></span></a>
+                            <a class="btn btn-lg btn-secondary" href="#"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
+                            <a class="btn btn-lg btn-secondary" href="#"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
                         </div>
                     </div>
 
-                    <!-- <div class="container-fluid result-buttons">
-                        <div class="row  navigate">
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary core-members status ">Core Members</div></div>
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary election-result status">Results</div></div>
-                        </div>
-                    </div> -->
+        
                 </div>
             </div>
         </div>
