@@ -258,19 +258,29 @@ $('.vote').click(function (e) {
 });
 
 
-do {
-  cout << ("still in 2020");
-  today++;
-} while ( (today > january_1st) && ( today < december_31st) );
 
-// $('.hoverme').hover(function () {
-//   $('button.btn:nth-child(5) > h1:nth-child(1)').show();
+
+$('.card-body.one').hover(function () {
+  $('.add-vote.one').show();
+    $('.card-body.one').css('background', '#696969');
+    $('.card-body.one btn-primary').css('visibility', 'hidden');
+    $('.card-body.one img').css('opacity', '0.4');
+  }, function () {
+  $('.card-body.one').css('background', 'white');
+  $('.add-vote.one').hide();
+    // out
+  }
+);
+
+$('.card-body.two').hover(function () {
+  $('.add-vote.two').show();
+
     
-//   }, function () {
-//     $('button.btn:nth-child(5) > h1:nth-child(1)').hide();
-//     // out
-//   }
-// );
+  }, function () {
+    $('.add-vote.two').hide();
+    // out
+  }
+);
 $('#logout').click(function (e) { 
   e.preventDefault();
   alert(logout);
