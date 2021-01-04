@@ -274,14 +274,20 @@ $('.card-body.one').hover(function () {
 );
 
 $('.card-body.two').hover(function () {
-  $('.add-vote.two').show();
-
-    
+  $('.btn-outline-dark.add-vote.two').css('display','block');
+    $('.card-body.two').css('background', '#696969');
+    $('.card-body.two .btn-primary').css('visibility', 'hidden');
+    $('.card-body.two img').css('opacity', '0.4');
   }, function () {
-    $('.add-vote.two').hide();
-    // out
+  $('.card-body.two').css('background', 'white');
+  $('.add-vote.two').hide();
+  $('.card-body.two .btn-primary').css('visibility', 'visible');
+  $('.card-body.two img').css('opacity', '1');
   }
 );
+
+
+
 $('#logout').click(function (e) { 
   e.preventDefault();
   window.location = "logout.php";
@@ -291,4 +297,9 @@ $('#logout').click(function (e) {
 $('.add-vote.one').click(function (e) { 
   e.preventDefault();
   alert("blue team selected");
+
+
+});$('.add-vote.two').click(function (e) { 
+  e.preventDefault();
+  alert("royal team selected");
 });
