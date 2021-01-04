@@ -284,5 +284,11 @@ $('.card-body.two').hover(function () {
 );
 $('#logout').click(function (e) { 
   e.preventDefault();
-  alert(logout);
+  window.location = "logout.php";
+});
+
+
+$('.add-vote.one').click(function (e) { 
+  e.preventDefault();
+  alert("blue team selected");
 });

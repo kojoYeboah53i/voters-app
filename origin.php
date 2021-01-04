@@ -111,12 +111,12 @@ session_start();
              <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 320px; margin-top: -3px;">
 
             <div class="card mb-4 box-shadow">
-            <div class="card-body">
+            <div class="card-body three">
                         <img src="./image/candidate-3.png" width="255" height="215" alt="" srcset="" >
                     
                         <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
-                            <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" style="display: none;">vote</button>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote three" style="display: none;">vote</button>
      <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FF00FF; color: white">Magenta Team</button>
         
             </div>
