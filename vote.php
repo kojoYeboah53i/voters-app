@@ -61,73 +61,141 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="container app-engine">
-                <div class="row">
-
-                    <div class="col-md-4" style="margin-top:20px;">
-                        <div class="col-sm"> <div class="btn btn-block status" id="president"><h3>President</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h3>Vice President</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h3>General Secretary</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h3>Financial Secretary</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="por"><h3>Public Relations</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h3>General Organizer</h3></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="cor-sec"><h3>Cordinating Secretary</h3></div></div>
+      <div class="containter-fluid origin">
+        <style>
+          .active{
+            background-color: #23c79e;
+          }
+        </style>
+        <div class="row">
+        <div class="col-md-4" style="margin-top:20px;">
+                        <div class="col-sm"> <div class="btn btn-block status active" id="president "><h4>President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h4>Vice President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="por"><h4>Public Relations</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Organizer</h4></div></div>
                     </div>
                     <br>
-                    <div class="col-6 col-sm-3 col-md-4  top-candidate" style="margin-top: 10px; ">
-                        <div class="card-body">
-                 <img src="./image/candidate-1.png" width="305" height="245" alt="" srcset="" >
-                   
-                 <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
-                    <small class="text-muted">Adjoa the leader</small></h4>
-            
-                        <button type="button"  class="btn cta  btn-lg btn-block   " id="Adjoa"style="background: blue; color: white">Blue team</button>
-                      </div>
-                        </div>
-                        <div class="col-6 col-sm-3 col-md-4  top-candidate" style="margin-top: 10px; ">
-                            <div class="card-body">
-                                <img src="./image/candidate-2.png" width="305" height="245" alt="" srcset="">
-                       
-                     <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
+
+
+        <div class="col-6 col-sm-3 col-md-4 "style="margin-top: 10px;">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-body one">
+            <img src="./image/candidate-1.png" width="255" height="215" alt="" srcset="" >   
+                   <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+                      <small class="text-muted">Adjoa the leader</small></h4>
+        <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" style="display: none;">vote</button>
+     <button type="button" class="btn btn-lg btn-block btn-primary" style="background: blue; color: white">Blue Team</button>
+        
+                    </div>
+        </div>
+   
+        </div>
+        <div class="col-6 col-sm-3 col-md-4 "style="margin-top: 10px;">
+
+          <div class="card mb-4 box-shadow">
+            <div class="card-body two">
+              <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >   
+              <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
                         <small class="text-muted">Kofi the Warrior</small></h4>
-                
-                            <button type="button"  class="btn cta  btn-lg btn-block"  id="kofi-b"style="background:#00ffff; color: white">Royal team</button>
-                          </div>
-                            </div>
-              
+          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote two" style="display: none;">vote</button>
+          <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #00ffff; color: white">Royal Team</button>
+
+                      </div>
+          </div>
+
+          </div>
+
+        <br>
+             <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 320px; margin-top: -3px;">
+
+            <div class="card mb-4 box-shadow">
+            <div class="card-body three">
+                        <img src="./image/candidate-3.png" width="255" height="215" alt="" srcset="" >
                     
-                    <div class="col-6 col-sm-3 col-md-4  bottom-candidate" style="margin-left: 360px; margin-top: -134px;">
-                    <div class="hoverme " >
-
-                         <div class="card-body" >
-                          <img src="./image/candidate-3.png" style="z-index: -1;"  width="305" height="245" alt="" srcset="">
-                         <h4 class="card-title pricing-card-title"> Yaw Manu <br>
+                        <h4 class="card-title pricing-card-title"> Yaw Manu <br>
                             <small class="text-muted">Yaw the leader</small></h4>
-                            <div class="btn  vote btn-block"style="position: relative;top:47px;background:  black; color: white; border: white solid 4px;margin-top:-40px; "><h2>vote</h2></div>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote three" style="display: none;">vote</button>
+     <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FF00FF; color: white">Magenta Team</button>
+        
+            </div>
+            </div>
+
+            </div>
+            <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 650px; margin-top: -399px;">
+
+          <div class="card mb-4 box-shadow">
+          <div class="card-body four">
+                      <img src="./image/candidate-4.png" width="255" height="215" alt="" srcset="" >
+                  
+                      <h4 class="card-title pricing-card-title"> Efia Mensah <br>
+                          <small class="text-muted">Efia the leader</small></h4>
+                          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote four" style="display: none;">vote</button>
+          <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FFD700; color: white">Gold Team</button>
+
+          </div>
+          </div>
+
+          </div>
+
+
+
+
+
+
+
+            <style>
+                  .this-candidate, .this-team{
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #aaa;
+                    margin: 20px 0;
+                    padding: 10px;
+                    width: 100%;
+                    border: 2px #ccc solid;
+
+                    }
+
+
+                    @media (min-width: 768px) {
+                    html {
+                        font-size: 16px;
+                    }
+                    }
+
+                    .container {
+                    max-width: 960px;
+                    }
+
+                    .board-header {
+                    max-width: 700px;
+                    }
+
+                    .card-deck .card {
+                    min-width: 220px;
+                    }
+
+                    .border-top { border-top: 1px solid #e5e5e5; }
+                    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+                    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+                                </style>
+
+      </div>        
+
+
+
  
-                                <button type="button"  class="btn btn btn-block  " 
-                                 id="yaw-team" style="background:  #FF00FF; color: white">Magenta Team</div>
-                              </div>
-                              </div>
-                       
-                                <div class="col-6 col-sm-3 col-md-4  bottom-candidate-2" style="margin-left: 1px; margin-top: -134px;">
-                                    <div class="card-body">
-                                               <img src="./image/candidate-4.png" width="305" height="245" alt="" srcset="">
-                                      
-                                <h4 class="card-title pricing-card-title"> Efia Mensah <br>
-                                 <small class="text-muted">Efia the leader</small></h4>
-                               <button type="button"  class="btn cta  btn-lg btn-block   " id="shop-now"style="background: #FFD700; color: white">Gold Team</button>
-                                         </div>
-                                     </div>
-                   
-                            </div>
-                        </div>
 
+    </div>
+<div class="col-sm" style="height: 400px;">
 
-                  </div>
-                  <div class="col-sm" style="height: 400px;">
-
-              </div>
+</div>
  
 
       <script src="./src/jquery.js"></script>

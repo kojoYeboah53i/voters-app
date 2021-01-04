@@ -276,7 +276,7 @@ $('.card-body.one').hover(function () {
 
 
 $('.card-body.two').hover(function () {
-  $('.btn-outline-dark.add-vote.two').css('display','block');
+  $('.add-vote.two').show();
     $('.card-body.two').css('background', '#696969');
     $('.card-body.two .btn-primary').css('visibility', 'hidden');
     $('.card-body.two img').css('opacity', '0.4');
@@ -287,7 +287,6 @@ $('.card-body.two').hover(function () {
   $('.card-body.two img').css('opacity', '1');
   }
 );
-
 
 
 

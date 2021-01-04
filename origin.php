@@ -93,19 +93,20 @@ session_start();
         </div>
    
         </div>
-        <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;">
+        <div class="col-6 col-sm-3 col-md-4 "style="margin-top: 10px;">
 
-            <div class="card mb-4 box-shadow">
+          <div class="card mb-4 box-shadow">
             <div class="card-body two">
-                        <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >
-                        <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
+              <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >   
+              <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
                         <small class="text-muted">Kofi the Warrior</small></h4>
-                <button type="button" class="btn btn-lg btn-block btn-outline-dark vote two" style="display: none;">vote</button>
-                <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #00ffff; color: white">Royal Team</button>
-            </div>
-            </div>
+          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote two" style="display: none;">vote</button>
+          <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #00ffff; color: white">Royal Team</button>
 
-        </div>
+                      </div>
+          </div>
+
+          </div>
 
         <br>
              <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 320px; margin-top: -3px;">
