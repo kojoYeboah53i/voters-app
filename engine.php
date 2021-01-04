@@ -211,13 +211,13 @@ function register(){
                         switch ($candidate) {
                             case "adjoa":
                                 $current_value;
-                            $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
+                            $select = mysqli_query($con, "SELECT * FROM candidates WHERE id = 1");
                             if(!$select){
                                 echo "failed to get current results from president" . mysqli_error($con);
                              } else {
                                 $current_value += 1;
                             
-                            $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                            $result = mysqli_query($con, "UPDATE candidates set adjoa = $current_value");
                             if(!$result){
                                 echo "failed to update adjoa's vote" . mysqli_error($con);
                              }
