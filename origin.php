@@ -69,7 +69,7 @@ session_start();
         </style>
         <div class="row">
         <div class="col-md-4" style="margin-top:20px;">
-                        <div class="col-sm"> <div class="btn btn-block status" id="president active"><h4>President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status active" id="president "><h4>President</h4></div></div>
                         <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h4>Vice President</h4></div></div>
                         <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Secretary</h4></div></div>
                         <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
@@ -83,11 +83,10 @@ session_start();
 
         <div class="card mb-4 box-shadow">
           <div class="card-body one">
-            <img src="./image/candidate-1.png" width="255" height="215" alt="" srcset="" >
-                   
+            <img src="./image/candidate-1.png" width="255" height="215" alt="" srcset="" >   
                    <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
                       <small class="text-muted">Adjoa the leader</small></h4>
-        <button type="button" class="btn btn-lg btn-block btn-outline-dark add-vote one" style="display: none;">vote</button>
+        <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" style="display: none;">vote</button>
      <button type="button" class="btn btn-lg btn-block btn-primary" style="background: blue; color: white">Blue Team</button>
         
                     </div>
@@ -99,9 +98,8 @@ session_start();
             <div class="card mb-4 box-shadow">
             <div class="card-body two">
                         <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >
-                    
-                    <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
-                        <small class="text-muted">Adjoa the leader</small></h4>
+                        <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
+                        <small class="text-muted">Kofi the Warrior</small></h4>
                 <button type="button" class="btn btn-lg btn-block btn-outline-dark vote two" style="display: none;">vote</button>
                 <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #00ffff; color: white">Royal Team</button>
             </div>
@@ -116,26 +114,30 @@ session_start();
             <div class="card-body">
                         <img src="./image/candidate-3.png" width="255" height="215" alt="" srcset="" >
                     
-                    <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
-                        <small class="text-muted">Adjoa the leader</small></h4>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                        <h4 class="card-title pricing-card-title"> Yaw Manu <br>
+                            <small class="text-muted">Yaw the leader</small></h4>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" style="display: none;">vote</button>
+     <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FF00FF; color: white">Magenta Team</button>
+        
             </div>
             </div>
 
             </div>
-            <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 650px; margin-top: -354px;">
+            <div class="col-6 col-sm-3 col-md-4 " style="margin-top: 10px;margin-left: 650px; margin-top: -399px;">
 
-                <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                            <img src="./image/candidate-4.png" width="255" height="215" alt="" srcset="" >
-                        
-                        <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
-                            <small class="text-muted">Adjoa the leader</small></h4>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-                </div>
-                </div>
+          <div class="card mb-4 box-shadow">
+          <div class="card-body four">
+                      <img src="./image/candidate-4.png" width="255" height="215" alt="" srcset="" >
+                  
+                      <h4 class="card-title pricing-card-title"> Efia Mensah <br>
+                          <small class="text-muted">Efia the leader</small></h4>
+                          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote four" style="display: none;">vote</button>
+          <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FFD700; color: white">Gold Team</button>
 
-                </div>
+          </div>
+          </div>
+
+          </div>
 
 
 

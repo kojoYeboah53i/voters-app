@@ -263,12 +263,13 @@ $('.vote').click(function (e) {
 $('.card-body.one').hover(function () {
   $('.add-vote.one').show();
     $('.card-body.one').css('background', '#696969');
-    $('.card-body.one btn-primary').css('visibility', 'hidden');
+    $('.card-body.one .btn-primary').css('visibility', 'hidden');
     $('.card-body.one img').css('opacity', '0.4');
   }, function () {
   $('.card-body.one').css('background', 'white');
   $('.add-vote.one').hide();
-    // out
+  $('.card-body.one .btn-primary').css('visibility', 'visible');
+  $('.card-body.one img').css('opacity', '1');
   }
 );
 

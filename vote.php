@@ -118,20 +118,16 @@ session_start();
                                  <small class="text-muted">Efia the leader</small></h4>
                                <button type="button"  class="btn cta  btn-lg btn-block   " id="shop-now"style="background: #FFD700; color: white">Gold Team</button>
                                          </div>
-                                           </div>
+                                     </div>
                    
+                            </div>
                         </div>
-                    </div>
-                        
 
 
+                  </div>
+                  <div class="col-sm" style="height: 400px;">
 
- 
-
-    </div>
-<div class="col-sm" style="height: 400px;">
-
-</div>
+              </div>
  
 
       <script src="./src/jquery.js"></script>
