@@ -273,6 +273,8 @@ $('.card-body.one').hover(function () {
   }
 );
 
+
+
 $('.card-body.two').hover(function () {
   $('.btn-outline-dark.add-vote.two').css('display','block');
     $('.card-body.two').css('background', '#696969');
@@ -288,6 +290,34 @@ $('.card-body.two').hover(function () {
 
 
 
+
+$('.card-body.three').hover(function () {
+  $('.add-vote.three').show();
+    $('.card-body.three').css('background', '#696969');
+    $('.card-body.three .btn-primary').css('visibility', 'hidden');
+    $('.card-body.three img').css('opacity', '0.4');
+  }, function () {
+  $('.card-body.three').css('background', 'white');
+  $('.add-vote.three').hide();
+  $('.card-body.three .btn-primary').css('visibility', 'visible');
+  $('.card-body.three img').css('opacity', '1');
+  }
+);
+
+
+$('.card-body.four').hover(function () {
+  $('.add-vote.four').show();
+    $('.card-body.four').css('background', '#696969');
+    $('.card-body.four .btn-primary').css('visibility', 'hidden');
+    $('.card-body.four img').css('opacity', '0.4');
+  }, function () {
+  $('.card-body.four').css('background', 'white');
+  $('.add-vote.four').hide();
+  $('.card-body.four .btn-primary').css('visibility', 'visible');
+  $('.card-body.four img').css('opacity', '1');
+  }
+);
+
 $('#logout').click(function (e) { 
   e.preventDefault();
   window.location = "logout.php";
@@ -299,7 +329,30 @@ $('.add-vote.one').click(function (e) {
   alert("blue team selected");
 
 
-});$('.add-vote.two').click(function (e) { 
+});
+
+
+
+
+$('.add-vote.two').click(function (e) { 
   e.preventDefault();
   alert("royal team selected");
+});
+
+
+
+$('.add-vote.three').click(function (e) { 
+  e.preventDefault();
+  alert("magenta team selected");
+
+
+});
+
+
+
+$('.add-vote.four').click(function (e) { 
+  e.preventDefault();
+  alert("gold team selected");
+
+
 });
