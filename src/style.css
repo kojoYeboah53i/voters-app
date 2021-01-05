@@ -161,21 +161,7 @@ width: 300px;  position: relative; top: -200px; right: -245px;
   }
 
 
- 
-
-    
-  /* .hoverme > div:nth-child(1) > img:nth-child(1){
-    z-index: -100;
-  }
-
-  .hoverme{
-    background-color: white;
-    z-index: 2;
-    position: relative;
-    height: 500px;
-    
-
-  } */
+  
 
   
   @media (min-width: 520px) {

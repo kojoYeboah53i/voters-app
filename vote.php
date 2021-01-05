@@ -2,16 +2,16 @@
 
 session_start();
 
-// if(!isset($_SESSION['user_in'])){
+if(!isset($_SESSION['user_in'])){
 
     
-//     header('location: index.html');
-// } 
-// if($_SESSION['verify'] == false){
+    header('location: index.html');
+} 
+if($_SESSION['verify'] == false){
 
-//   header('location: verify.php');
+  header('location: verify.php');
 
-// }
+}
 
 ?>
 
@@ -22,8 +22,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voters-app</title>
     <link rel="stylesheet" href="./src/bootstrap.css">
-    <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
     <div class="container main">
@@ -52,8 +52,8 @@ session_start();
 
                 <div class="col-md-12">
                         <div class="button-wrapper btn-container-left">
-                            <a class="btn btn-lg btn-secondary" href="#"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
-                            <a class="btn btn-lg btn-secondary" href="#"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
+                            <a class="btn btn-lg btn-secondary" href="vote.php"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
+                            <a class="btn btn-lg btn-secondary" href="result.php"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
                         </div>
                     </div>
 
@@ -69,12 +69,12 @@ session_start();
         </style>
         <div class="row">
         <div class="col-md-4" style="margin-top:20px;">
-                        <div class="col-sm"> <div class="btn btn-block status active" id="president "><h4>President</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="v-president"><h4>Vice President</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Secretary</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="por"><h4>Public Relations</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status" id="gen-sec"><h4>General Organizer</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status president active" id=" "><h4>President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status v-president" id="v-president"><h4>Vice President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status fin-sec"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status por" id="por"><h4>Public Relations</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Organizer</h4></div></div>
                     </div>
                     <br>
 
@@ -92,6 +92,12 @@ session_start();
                     </div>
         </div>
    
+        </div>
+
+        <div class="msgalert" style="display:none">
+        <br> <br>
+        <h3 style="position: relative; right: -14px; font-size:2rem"> voted for blue team</h3>
+                                         
         </div>
         <div class="col-6 col-sm-3 col-md-4 "style="margin-top: 10px;">
 
@@ -146,6 +152,17 @@ session_start();
 
 
             <style>
+              .msgalert{
+                position: absolute;
+                left: 55%;
+                top: 40rem;
+                z-index: 40000;
+                width: 380px;
+                height: 170px;
+                background: #23c79e;
+                color: white;
+                border-radius: 50px 50px 50px 0;
+                }
                   .this-candidate, .this-team{
 
                     display: flex;

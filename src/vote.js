@@ -4,7 +4,10 @@
 
 $('.add-vote.one').click(function (e) { 
     e.preventDefault();
-    // alert("blue team selected");
+    $('.btn.btn-block.status.president').removeClass('active');
+    $('.btn.btn-block.status.v-president').addClass('active');
+    $('.msgalert').fadeIn('1200');
+    $('.msgalert h3').html('voted for Blue Team');
   
     var FormData = {
   
@@ -21,6 +24,9 @@ $('.add-vote.one').click(function (e) {
          data: FormData,
          success: function (response) {
            console.log(response);
+           setTimeout(() => {
+            $('.msgalert').fadeOut('2000');
+          }, 2000);
          }
        });
   
@@ -32,7 +38,10 @@ $('.add-vote.one').click(function (e) {
   
   $('.add-vote.two').click(function (e) { 
     e.preventDefault();
-    alert("royal team selected");
+    $('.btn.btn-block.status.president').removeClass('active');
+    $('.btn.btn-block.status.v-president').addClass('active');
+   $('.msgalert').fadeIn('1200');
+   $('.msgalert h3').html('voted for Royal Team');
     var FormData = {
   
       position: "president",
@@ -48,6 +57,10 @@ $('.add-vote.one').click(function (e) {
          data: FormData,
          success: function (response) {
            console.log(response);
+
+           setTimeout(() => {
+             $('.msgalert').fadeOut('2000');
+           }, 2000);
          }
        });
   });
@@ -56,7 +69,10 @@ $('.add-vote.one').click(function (e) {
   
   $('.add-vote.three').click(function (e) { 
     e.preventDefault();
-    alert("magenta team selected");
+    $('.btn.btn-block.status.president').removeClass('active');
+    $('.btn.btn-block.status.v-president').addClass('active');
+    $('.msgalert').fadeIn('1200');
+    $('.msgalert h3').html('voted for Magenta Team');
     var FormData = {
   
       position: "president",
@@ -72,6 +88,9 @@ $('.add-vote.one').click(function (e) {
          data: FormData,
          success: function (response) {
            console.log(response);
+           setTimeout(() => {
+            $('.msgalert').fadeOut('2000');
+          }, 2000);
          }
        });
   
@@ -81,7 +100,11 @@ $('.add-vote.one').click(function (e) {
   
   $('.add-vote.four').click(function (e) { 
     e.preventDefault();
-    alert("gold team selected");
+    $('.msgalert').fadeIn('1200');
+    $('.msgalert h3').html('voted for Gold Team');
+
+    $('.btn.btn-block.status.president').removeClass('active');
+    $('.btn.btn-block.status.v-president').addClass('active');
     var FormData = {
   
       position: "president",
@@ -97,6 +120,9 @@ $('.add-vote.one').click(function (e) {
          data: FormData,
          success: function (response) {
            console.log(response);
+           setTimeout(() => {
+            $('.msgalert').fadeOut('2000');
+          }, 2000);
          }
        });
   

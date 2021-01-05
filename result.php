@@ -1,13 +1,19 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['user_in'])){
+
+session_start();
+
+if(!isset($_SESSION['user_in'])){
 
     
-// header('location: index.html');
-// }
+    header('location: index.html');
+} 
+if($_SESSION['verify'] == false){
+
+  header('location: verify.php');
+
+}
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voters-app</title>
     <link rel="stylesheet" href="./src/bootstrap.css">
-    <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
     <div class="container main">
@@ -34,9 +40,8 @@
               <form class="form-inline my-2 my-md-0">
                 <i class="fa fa-search my-search" ></i>
               </form>
-                
-                <a href="logout.php" type="button" class="this-login  btn btn-info" ><i class="fa fa-user" style="margin-right: 6px;"></i>Logout</a>
-            </div>
+              <a href="logout.php" type="button" class="this-login  btn btn-info" ><i class="fa fa-user" style="margin-right: 6px;"></i>Logout</a>
+            </div>  
           </nav>
         <div class="container banner">
             <div class="row">
@@ -44,15 +49,35 @@
                     <p><h2>CCHN - Winneba</h2></p>
       <p class="lead">College of Community Health Nursing <br> 
                 2020/21 Acadamic Year of Elections</p>
-                    <div class="container result-buttons">
-                        <div class="row">
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary core-members status ">Core Members</div></div>
-                        <div class="col-6 col-md-4"> <div class="btn btn-secondary election-resul status">Results</div></div>
+
+                <div class="col-md-12">
+                        <div class="button-wrapper btn-container-left">
+                            <a class="btn btn-lg btn-secondary" href="#"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
+                            <a class="btn btn-lg btn-secondary" href="#"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
                         </div>
                     </div>
+
+        
                 </div>
             </div>
         </div>
+      <div class="containter-fluid origin">
+        <style>
+          .active{
+            background-color: #23c79e;
+          }
+        </style>
+        <div class="row">
+        <div class="col-md-4" style="margin-top:20px;">
+                        <div class="col-sm"> <div class="btn btn-block status president active" id=" "><h4>President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status v-president" id="v-president"><h4>Vice President</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status fin-sec"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status por" id="por"><h4>Public Relations</h4></div></div>
+                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Organizer</h4></div></div>
+                    </div>
+                    <br>
+
         <div class="container app-engine">
            
                   <div class="col-lg " style="margin-top: 10px;">
