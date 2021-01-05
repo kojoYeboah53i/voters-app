@@ -201,65 +201,80 @@ function register(){
                   include 'db.php';
 
                   extract($_POST);
-                  echo "positon" .$postion;
-                  echo  "candidate". $candidate;
+          
 
                   if(isset($candidate)){
-                    if($postion == "president"){
+                    if($position == "president"){
 
-                        
+                        echo "position : president"; echo "\n";
                         switch ($candidate) {
                             case "adjoa":
-                                $current_value;
-                            $select = mysqli_query($con, "SELECT * FROM candidates WHERE id = 1");
-                            if(!$select){
+                                $current_value = 0;
+                            $select = mysqli_query($con, "SELECT blue_team FROM candidates WHERE position = 'president'  ");
+                            if(mysqli_num_rows( $select) < 0){
                                 echo "failed to get current results from president" . mysqli_error($con);
                              } else {
-                                $current_value += 1;
+                               while($r = mysqli_fetch_array($select)){
+                                   $current_value = $r['blue_team'];
+                                   $current_value++;
+                                   echo $current_value; echo "\n";
+                               }
                             
-                            $result = mysqli_query($con, "UPDATE candidates set adjoa = $current_value");
+                            $result = mysqli_query($con, "UPDATE candidates set blue_team = $current_value  WHERE position = 'president'  ");
                             if(!$result){
                                 echo "failed to update adjoa's vote" . mysqli_error($con);
                              }
                              }
                             break;
                             case "kofi":
-                                $current_value;
-                                $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
-                                if(!$select){
+                                $current_value = 0;
+                                $select = mysqli_query($con, "SELECT royal_team FROM candidates WHERE position = 'president'  ");
+                                if(mysqli_num_rows( $select) < 0){
                                     echo "failed to get current results from president" . mysqli_error($con);
                                  } else {
-                                    $current_value + 1;
+                                   while($r = mysqli_fetch_array($select)){
+                                       $current_value = $r['royal_team'];
+                                       $current_value++;
+                                       echo $current_value; echo "\n";
+                                   }
                                 
-                                $result = mysqli_query($con, "UPDATE president set kofi = $current_value");
+                                $result = mysqli_query($con, "UPDATE candidates set royal_team = $current_value  WHERE position = 'president'  ");
                                 if(!$result){
-                                    echo "failed to update adjoa's vote" . mysqli_error($con);
+                                    echo "failed to update kofi's vote" . mysqli_error($con);
                                  }
                                  }
                             break;
                             case "yaw":
-                                $current_value;
-                                $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
-                                if(!$select){
+                                $current_value = 0;
+                                $select = mysqli_query($con, "SELECT magenta_team FROM candidates WHERE position = 'president'  ");
+                                if(mysqli_num_rows( $select) < 0){
                                     echo "failed to get current results from president" . mysqli_error($con);
                                  } else {
-                                    $current_value + 1;
+                                   while($r = mysqli_fetch_array($select)){
+                                       $current_value = $r['magenta_team'];
+                                       $current_value++;
+                                       echo $current_value; echo "\n";
+                                   }
                                 
-                                $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                                $result = mysqli_query($con, "UPDATE candidates set magenta_team = $current_value  WHERE position = 'president'  ");
                                 if(!$result){
-                                    echo "failed to update adjoa's vote" . mysqli_error($con);
+                                    echo "failed to update yaw's vote" . mysqli_error($con);
                                  }
                                  }
                             break;
-                            case "afia";
-                            $current_value;
-                            $select = mysqli_query($con, "SELECT * FROM president WHERE user_id = 1");
-                            if(!$select){
+                            case "efia";
+                            $current_value = 0;
+                            $select = mysqli_query($con, "SELECT gold_team FROM candidates WHERE position = 'president'  ");
+                            if(mysqli_num_rows( $select) < 0){
                                 echo "failed to get current results from president" . mysqli_error($con);
                              } else {
-                                $current_value + 1;
+                               while($r = mysqli_fetch_array($select)){
+                                   $current_value = $r['gold_team'];
+                                   $current_value++;
+                                   echo $current_value; echo "\n";
+                               }
                             
-                            $result = mysqli_query($con, "UPDATE president set adjoa = $current_value");
+                            $result = mysqli_query($con, "UPDATE candidates set gold_team = $current_value  WHERE position = 'president'  ");
                             if(!$result){
                                 echo "failed to update adjoa's vote" . mysqli_error($con);
                              }

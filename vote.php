@@ -84,10 +84,10 @@ session_start();
         <div class="card mb-4 box-shadow">
           <div class="card-body one">
             <img src="./image/candidate-1.png" width="255" height="215" alt="" srcset="" >   
-                   <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
-                      <small class="text-muted">Adjoa the leader</small></h4>
-        <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" style="display: none;">vote</button>
-     <button type="button" class="btn btn-lg btn-block btn-primary" style="background: blue; color: white">Blue Team</button>
+              <h4 class="card-title pricing-card-title"> Adjoa Frimpong <br>
+               <small class="text-muted">Adjoa the leader</small></h4>
+                 <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote one" value="adjoa" style="display: none;">vote</button>
+                 <button type="button" class="btn btn-lg btn-block btn-primary" style="background: blue; color: white">Blue Team</button>
         
                     </div>
         </div>
@@ -100,7 +100,7 @@ session_start();
               <img src="./image/candidate-2.png" width="255" height="215" alt="" srcset="" >   
               <h4 class="card-title pricing-card-title"> Kofi Baboni <br>
                         <small class="text-muted">Kofi the Warrior</small></h4>
-          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote two" style="display: none;">vote</button>
+          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote two" value="kofi" style="display: none;">vote</button>
           <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #00ffff; color: white">Royal Team</button>
 
                       </div>
@@ -114,10 +114,9 @@ session_start();
             <div class="card mb-4 box-shadow">
             <div class="card-body three">
                         <img src="./image/candidate-3.png" width="255" height="215" alt="" srcset="" >
-                    
-                        <h4 class="card-title pricing-card-title"> Yaw Manu <br>
-                            <small class="text-muted">Yaw the leader</small></h4>
-                            <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote three" style="display: none;">vote</button>
+      <h4 class="card-title pricing-card-title"> Yaw Manu <br>
+         <small class="text-muted">Yaw the leader</small></h4>
+       <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote three" value="yaw" style="display: none;">vote</button>
      <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FF00FF; color: white">Magenta Team</button>
         
             </div>
@@ -132,7 +131,7 @@ session_start();
                   
                       <h4 class="card-title pricing-card-title"> Efia Mensah <br>
                           <small class="text-muted">Efia the leader</small></h4>
-                          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote four" style="display: none;">vote</button>
+                          <button type="button" class="btn btn-lg btn-block btn-outline-white add-vote four" value="efia" style="display: none;">vote</button>
           <button type="button" class="btn btn-lg btn-block btn-primary" style="background: #FFD700; color: white">Gold Team</button>
 
           </div>
@@ -201,6 +200,7 @@ session_start();
       <script src="./src/jquery.js"></script>
       <script src="./src/bootstrap.js"></script>
       <script src="./src/main.js"></script>
+      <script src="./src/vote.js"></script>
       
       
 </body>

@@ -322,36 +322,3 @@ $('#logout').click(function (e) {
   window.location = "logout.php";
 });
 
-
-$('.add-vote.one').click(function (e) { 
-  e.preventDefault();
-  alert("blue team selected");
-
-
-});
-
-
-
-
-$('.add-vote.two').click(function (e) { 
-  e.preventDefault();
-  alert("royal team selected");
-});
-
-
-
-$('.add-vote.three').click(function (e) { 
-  e.preventDefault();
-  alert("magenta team selected");
-
-
-});
-
-
-
-$('.add-vote.four').click(function (e) { 
-  e.preventDefault();
-  alert("gold team selected");
-
-
-});
