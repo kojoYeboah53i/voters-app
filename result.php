@@ -68,15 +68,7 @@ if($_SESSION['verify'] == false){
           }
         </style>
         <div class="row">
-        <div class="col-md-4" style="margin-top:20px;">
-                        <div class="col-sm"> <div class="btn btn-block status president active" id=" "><h4>President</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status v-president" id="v-president"><h4>Vice President</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Secretary</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status fin-sec"  id="fin-sec"><h4>Financial Secretary</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status por" id="por"><h4>Public Relations</h4></div></div>
-                        <div class="col-sm"> <div class="btn btn-block status gen-sec" id="gen-sec"><h4>General Organizer</h4></div></div>
-                    </div>
-                    <br>
+    
 
         <div class="container app-engine">
            
@@ -98,11 +90,11 @@ if($_SESSION['verify'] == false){
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                <h4>   Adjoa Frimpong <br> #Total No. Votes : 15 <br> </h4>
-                             <span "> <button class="btn btn-dark"style="background-color:blue;"> <h4 >Blue Team </h4></button></span>
+                                <h4>   Adjoa Frimpong <br> #Total No. Votes : <span class="poll-data-adjoa"> </span> <br> </h4>
+                             <span> <button class="btn btn-dark"style="background-color:blue;"> <h4 >Blue Team </h4></button></span>
                                 
                                 <div class="progress" style="margin-top: 30px;">
-                                  <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
+                                  <div class="adjoa-progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
                                   aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color:rgb(42, 151, 153);">
                                   </div>
                             </div>
@@ -116,10 +108,10 @@ if($_SESSION['verify'] == false){
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                <h4>    Kofi Baboni <br> #Total No. Votes : 15 <br> </h4>
+                                <h4>    Kofi Baboni <br> #Total No. Votes : <span class="poll-data-kofi"></span> <br> </h4>
                              <span style="color:#00ffff;"> <h4>Royal Team </h4></span>
                                 <div class="progress" style="margin-top: 30px;">
-                                  <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
+                                  <div class="kofi-progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
                                   aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color:rgb(42, 151, 153);">
                                   </div>
                             </div>
@@ -133,10 +125,10 @@ if($_SESSION['verify'] == false){
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                <br> #Total No. Votes : 15
+                                <br> #Total No. Votes : <span class="poll-data-yaw"> </span>
                                 
                                 <div class="progress" style="margin-top: 30px;">
-                                  <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
+                                  <div class="yaw-progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
                                   aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color:rgb(42, 151, 153);">
                                   </div>
                             </div>
@@ -150,10 +142,10 @@ if($_SESSION['verify'] == false){
                             <br>
                             <div class="col-sm">
                                 <div class="col-sm poll-data" >
-                                Adjoa Frimpong <br> #Total No. Votes : 15
+                                Adjoa Frimpong <br> #Total No. Votes :<span class="poll-data-efia"></span>
                                 
                                 <div class="progress" style="margin-top: 30px;">
-                                  <div class="progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
+                                  <div class="efia-progress-bar" role="progressbar style = color:rgb(42, 151, 153);" 
                                   aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color:rgb(42, 151, 153);">
                                   </div>
                             </div>
@@ -165,6 +157,9 @@ if($_SESSION['verify'] == false){
                    
 
                     </div>
+                    </div>
+                    </div>
+                    </div>
                         
 
      
@@ -174,15 +169,26 @@ if($_SESSION['verify'] == false){
 
     </div>
 
-    <footer class="footer" style="visibility: hidden;">
-        <div class="container">
-          <span class="text-muted"> created by yours truly, Isaac Yeboah</span>
-        </div>
-      </footer> 
+   
 
       <script src="./src/jquery.js"></script>
       <script src="./src/bootstrap.js"></script>
       <script src="./src/main.js"></script>
+
+      <script>
+          $('.poll-data-adjoa').html('20');
+          $('div.adjoa-progress-bar').css('width', '100%');
+
+          $('.poll-data-kofi').html('22');
+          $('div.adjoa-progress-bar').css('width', '100%');
+
+          $('.poll-data-yaw').html('21');
+          $('div.yaw-progress-bar').css('width', '100%');
+
+          $('.poll-data-afia').html('23');
+          $('div.efia-progress-bar').css('width', '100%');
+
+      </script>
       
       
 </body>
