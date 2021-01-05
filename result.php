@@ -52,8 +52,8 @@ if($_SESSION['verify'] == false){
 
                 <div class="col-md-12">
                         <div class="button-wrapper btn-container-left">
-                            <a class="btn btn-lg btn-secondary" href="#"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
-                            <a class="btn btn-lg btn-secondary" href="#"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
+                            <a class="btn btn-lg btn-secondary" href="vote.php"><span class="glyphicon glyphicon-hand-left">Core Members</span></a>
+                            <a class="btn btn-lg btn-secondary" href="result.php"> <span class="glyphicon glyphicon-hand-left">Result</span></a>
                         </div>
                     </div>
 
