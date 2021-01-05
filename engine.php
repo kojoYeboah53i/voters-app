@@ -293,6 +293,88 @@ function register(){
               }
 
 
-              function test_unit(){
-                  echo "route is working fine";
-              }
+              function display_result(){
+                  include 'db.php';
+                  if(isset($_POST['result'])){
+                    $total_votes = 20;
+                    $adjoa = 0;
+                    $kofi  = 0;
+                    $yaw   = 0;
+                    $efia  = 0;
+                    $adjoaprogressbar;
+                    $kofiprogressbar;
+                    $yawprogressbar;
+                    $efiaprogressbar;
+
+                    $select = mysqli_query($con, "SELECT blue_team FROM candidates WHERE position = 'president'  ");
+                    if(mysqli_num_rows($select) > 0) {
+                        while($row = mysqli_fetch_array($select)){
+                            $adjoa = $row['blue_team'];
+                        }
+
+                        $adjoaprogressbar = $adjoa /   $total_votes;
+                        $adjoaprogressbar = $adjoaprogressbar * 100;
+                        $adjoaprogressbar = (int)$adjoaprogressbar; 
+                    }
+
+                        
+                    $select = mysqli_query($con, "SELECT royal_team FROM candidates WHERE position = 'president'  ");
+                    if(mysqli_num_rows($select) > 0) {
+                        while($row = mysqli_fetch_array($select)){
+                            $kofi = $row['royal_team'];
+                        }
+
+                        $kofiprogressbar = $kofi /   $total_votes;
+                        $kofiprogressbar = $kofiprogressbar * 100;
+                        $kofiprogressbar = (int)$kofiprogressbar; 
+                    }
+
+                        $select = mysqli_query($con, "SELECT magenta_team FROM candidates WHERE position = 'president'  ");
+                        if(mysqli_num_rows($select) > 0) {
+                            while($row = mysqli_fetch_array($select)){
+                                $yaw = $row['magenta_team'];
+                            }
+                        
+                            $yawprogressbar = $yaw /   $total_votes;
+                            $yawprogressbar = $yawprogressbar * 100;
+                            $yawprogressbar = (int)$yawprogressbar; 
+                                 }
+
+
+
+                            $select = mysqli_query($con, "SELECT gold_team FROM candidates WHERE position = 'president'  ");
+                            if(mysqli_num_rows($select) > 0) {
+                                while($row = mysqli_fetch_array($select)){
+                                    $efia = $row['gold_team'];
+                                }
+                            
+                                $efiaprogressbar = $efia /   $total_votes;
+                                $efiaprogressbar = $efiaprogressbar * 100;
+                                $efiaprogressbar = (int)$efiaprogressbar; 
+                            }
+
+                        $output = array(
+                            "adjoa" =>  $adjoa,
+                            "adjoaprogressbar" =>  $adjoaprogressbar,
+                            "kofi" =>  $kofi,
+                            "kofiprogressbar" =>  $kofiprogressbar,
+                            "yaw" =>  $yaw,
+                            "yawprogressbar" =>  $yawprogressbar,
+                            "efia" =>  $efia,
+                            "efiaprogressbar" =>  $efiaprogressbar
+                          
+                            );
+                            echo $output = json_encode($output);
+
+                    }
+
+
+
+
+
+
+
+
+
+                  }
+           
